@@ -19,8 +19,8 @@ set infercase   " Use the correct case when autocompleting
 
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set background=dark
-let g:solarized_termcolors=16
-colorscheme solarized
+" let g:solarized_termcolors=16
+" colorscheme solarized
 
 set number            " Show line numbers
 set colorcolumn=81

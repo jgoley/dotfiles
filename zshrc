@@ -56,6 +56,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -80,6 +82,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gaa='git add .'
 
 # autoload -U colors && colors
 

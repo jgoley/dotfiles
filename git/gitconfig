@@ -20,7 +20,7 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = /Users/jgoley/.gitignore_global
+	excludesfile = /Users/jgoley/.gitignore
         editor = subl
         pager = less -FRSX
 [apply]
