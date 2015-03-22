@@ -83,6 +83,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gaa='git add .'
+alias bowi='bower install'
+alias bowis='bower install --save'
 
 # autoload -U colors && colors
 
