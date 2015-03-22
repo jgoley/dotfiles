@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 ZSH_CUSTOM=$HOME/.zsh
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="avit"
+ZSH_THEME="jgo"
 
 
 # Set name of the theme to load.
@@ -82,9 +82,13 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias gaa='git add .'
 alias bowi='bower install'
 alias bowis='bower install --save'
+alias gacmsg = 'git commit -a -m '
+alias mtr='meteor'
+alias mtra='meteor add'
 
 # autoload -U colors && colors
 
@@ -95,3 +99,4 @@ alias bowis='bower install --save'
 # NEWLINE=$'\n'
 # PROMPT="${NEWLINE}%{$fg[gray]%}% %~ $(git_prompt_info) $(_ruby_version) ${NEWLINE}%{$reset_color%}% ⦿%{$fg[red]%}% ☉%{$reset_color%}% ⦿☢ "
 #PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+
