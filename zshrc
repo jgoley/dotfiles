@@ -84,9 +84,13 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gaa='git add .'
-alias gacmsg = 'git commit -a -m '
+alias gacmsg='git commit -a -m'
+alias gbd='git branch -D'
 alias mtr='meteor'
 alias mtra='meteor add'
+alias mtrm='meteor mongo'
+alias mtrp='mtr --production'
+alias mtrt='mtr run --test'
 
 # autoload -U colors && colors
 
