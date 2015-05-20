@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 ZSH_CUSTOM=$HOME/.zsh
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="jgo"
+ZSH_THEME="avit"
 
 
 # Set name of the theme to load.
@@ -88,7 +88,7 @@ alias gacmsg='git commit -a -m'
 alias gbd='git branch -D'
 alias bowi='bower install'
 alias bowis='bower install --save'
-alias gacmsg = 'git commit -a -m '
+alias gacmsg='git commit -a -m '
 alias mtr='meteor'
 alias mtra='meteor add'
 alias mtrm='meteor mongo'
