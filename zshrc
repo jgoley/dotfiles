@@ -53,7 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -83,8 +83,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias sa='subl .'
+
 alias gaa='git add .'
-alias gacmsg='git commit -a -m'
 alias gbd='git branch -D'
 alias bowi='bower install'
 alias bowis='bower install --save'
@@ -93,7 +94,15 @@ alias mtr='meteor'
 alias mtra='meteor add'
 alias mtrm='meteor mongo'
 alias mtrp='mtr --production'
-alias mtrt='mtr run --test'
+alias mtrt='VELOCITY_CI=1 CHIMP_OPTIONS="" meteor --test'
+alias mtrtb='VELOCITY_CI=1 SELENIUM_BROWSER=chrome meteor --test'
+alias mtrtdev='VELOCITY_CI=1 CUCUMBER_TAGS=@dev CUCUMBER_FORMAT=summary meteor run'
+alias mtrtall='VELOCITY_CI=1 CUCUMBER_FORMAT=summary meteor run'
+alias mtrtall='VELOCITY_CI=1 CHIMP_OPTIONS="" meteor'
+alias mtrtt='meteor test-packages packages/*'
+alias mtrr='VELOCITY=0 meteor run'
+alias ve='source ../venv/bin/activate'
+
 
 # autoload -U colors && colors
 
