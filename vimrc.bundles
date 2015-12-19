@@ -35,6 +35,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 
 " Tmux integration
 Plugin 'christoomey/vim-tmux-navigator'
@@ -57,7 +58,9 @@ Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 
 " Colors
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'mkarmona/colorsbox'
+
 
 " Sensible defaults
 Plugin 'tpope/vim-sensible' " needs to be last
