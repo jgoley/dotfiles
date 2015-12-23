@@ -7,7 +7,6 @@ ZSH_THEME="jgo"
 # DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm.dd.yyyy"
@@ -47,3 +46,4 @@ alias mtru='mtr update'
 alias ve='source ../venv/bin/activate'
 
 alias zr='exec zsh'
+alias gritsdb='export MONGO_URL=mongodb://localhost/grits'
