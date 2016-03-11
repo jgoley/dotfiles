@@ -1,0 +1,33 @@
+"*":
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+  core:
+    themes: [
+      "one-dark-ui"
+      "monokai-slate"
+    ]
+  editor:
+    autoIndentOnPaste: false
+    backUpBeforeSaving: true
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "950931ad-f71b-2c14-847a-148486f4d42c"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "linter-stylint": {}
+  metrics:
+    userId: "b4839971608fcaf36115b9839f70d705f943dc67"
+  minimap:
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      selection: true
+      selectionDecorationsZIndex: 0
+  "one-dark-ui": {}
+  welcome:
+    showOnStartup: false
+  whitespace: {}

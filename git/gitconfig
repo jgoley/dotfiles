@@ -21,7 +21,7 @@
         ui = true
 [core]
 	excludesfile = ~/.gitignore
-        editor = subl
+        editor = subl3 -w -n
         pager = less -FRSX
 [apply]
         whitespace = nowarn
