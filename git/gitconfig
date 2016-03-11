@@ -20,8 +20,8 @@
         branch = auto
         ui = true
 [core]
-	excludesfile = ~/.gitignore
-        editor = subl3 -w -n
+      	excludesfile = ~/.gitignore
+      	editor = atom -n -w
         pager = less -FRSX
 [apply]
         whitespace = nowarn
