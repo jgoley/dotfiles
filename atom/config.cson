@@ -13,6 +13,7 @@
     fontSize: 12
     invisibles: {}
     showIndentGuide: true
+    showInvisibles: true
     tabType: "soft"
   "exception-reporting":
     userId: "950931ad-f71b-2c14-847a-148486f4d42c"
@@ -30,4 +31,5 @@
   "one-dark-ui": {}
   welcome:
     showOnStartup: false
-  whitespace: {}
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
