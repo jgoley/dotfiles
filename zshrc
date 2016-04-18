@@ -33,6 +33,7 @@ alias aa='atom .'
 alias gaa='git add .'
 alias gbd='git branch -D'
 alias gacmsg='git commit -a -m '
+alias gpf='git push -f'
 
 alias bowi='bower install'
 alias bowis='bower install --save'
@@ -48,16 +49,9 @@ alias mtrm='meteor mongo'
 alias mtrp='mtr --production'
 alias mtru='mtr update'
 
-
 alias ve='source ../venv/bin/activate'
 
 alias zr='exec zsh'
-alias gritsdb='export MONGO_URL=mongodb://localhost/grits'
-alias mtrt='VELOCITY_CI=1 CHIMP_OPTIONS="" meteor --test'
-alias mtrtb='VELOCITY_CI=1 SELENIUM_BROWSER=chrome meteor --test'
-alias mtrtdev='VELOCITY_CI=1 CUCUMBER_TAGS=@dev CUCUMBER_FORMAT=summary meteor run'
-alias mtrtt='meteor test-packages packages/*'
-alias mtrr='VELOCITY=0 meteor run'
 alias mtrs='meteor --settings settings-development.json'
 
 alias ve='source ../venv/bin/activate'

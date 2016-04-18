@@ -23,6 +23,7 @@
       	excludesfile = ~/.gitignore
       	editor = atom -n -w
         pager = less -FRSX
+        ignorecase = false
 [apply]
         whitespace = nowarn
 [mergetool]

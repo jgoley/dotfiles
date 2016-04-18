@@ -1,35 +1,43 @@
 "*":
+  "atom-alignment": {}
   "bracket-matcher":
-    autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
     themes: [
       "one-dark-ui"
       "monokai-slate"
     ]
+  date: {}
   editor:
-    autoIndentOnPaste: false
-    backUpBeforeSaving: true
-    fontSize: 12
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
+    softWrap: true
     tabType: "soft"
   "exception-reporting":
-    userId: "950931ad-f71b-2c14-847a-148486f4d42c"
+    userId: "54637407-dc39-5669-13b4-c71ec84fe2b9"
   "git-diff":
     showIconsInEditorGutter: true
+  "highlight-selected": {}
   "linter-stylint": {}
-  metrics:
-    userId: "b4839971608fcaf36115b9839f70d705f943dc67"
+  "markdown-preview": {}
   minimap:
     plugins:
       cursorline: true
       cursorlineDecorationsZIndex: 0
-      selection: true
-      selectionDecorationsZIndex: 0
-  "one-dark-ui": {}
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+  pigments: {}
+  "spell-check": {}
+  "stylus-autocompile": {}
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+  ignore: [
+    '/.meteor'
+  ]
+
+".jade.source":
+  whitespace:
+    removeTrailingWhitespace: true
