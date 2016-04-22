@@ -19,6 +19,9 @@
   "git-diff":
     showIconsInEditorGutter: true
   "highlight-selected": {}
+  ignore: [
+    "/.meteor"
+  ]
   "linter-stylint": {}
   "markdown-preview": {}
   minimap:
@@ -27,6 +30,8 @@
       cursorlineDecorationsZIndex: 0
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
   pigments: {}
   "spell-check": {}
   "stylus-autocompile": {}
@@ -34,10 +39,6 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-  ignore: [
-    '/.meteor'
-  ]
-
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
