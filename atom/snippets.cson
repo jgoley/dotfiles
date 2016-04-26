@@ -1,0 +1,64 @@
+'.source.coffee':
+  'console.log a string':
+    'prefix': 'ls'
+    'body': 'console.log "${1:foo}"'
+
+  'console.log a variable':
+    'prefix': 'lv'
+    'body': 'console.log ${1:foo}'
+
+  'function':
+    'prefix': 'fn'
+    'body': '(${1:foo}) ->'
+
+  'Meteor: Collection':
+    'prefix': 'collection'
+    'body': 'Meteor.Collection ${1:name}'
+
+  'Meteor: Template onCreated':
+    'prefix': 'created'
+    'body': 'Template.${1:name}.oncreated ->\n  ${2:}'
+
+  'Meteor: Template onRendered':
+    'prefix': 'rendered'
+    'body': 'Template.${1:name}.onRendered ->\n  ${2:}'
+
+  'Meteor: Template events':
+    'prefix': 'events'
+    'body': 'Template.${1:name}.helpers\n  \'${2:event} ${3:el}\': (event, instance) ->\n    ${4:}'
+
+  'Meteor: Template helpers':
+    'prefix': 'helpers'
+    'body': 'Template.${1:name}.helpers\n  ${2:event}: ->\n    ${3:}'
+
+  'Meteor: Methods':
+    'prefix': 'methods'
+    'body': 'Meteor.Methods\n  '
+
+  'Meteor: Call Method':
+    'prefix': 'call'
+    'body': 'Meteor.Call \'${1:name}\', ${2:arg}, (err, res) ->\n  ${3:}'
+
+  'Meteor: isServer':
+    'prefix': 'isserver'
+    'body': 'Meteor.isServer\n  '
+
+  'Meteor: isClient':
+    'prefix': 'isclient'
+    'body': 'Meteor.isClient\n  '
+
+  'Meteor: Publish':
+    'prefix': 'publish'
+    'body': 'Meteor.publish \'${1:name}\', (${2:arg}) ->\n  '
+
+  'Meteor: Template Instance':
+    'prefix': 'instance'
+    'body': 'Template.instance()'
+
+  'Meteor: Reactive Var':
+    'prefix': 'reactive'
+    'body': 'new ReactiveVar ${1:}'
+
+  'Meteor: Register Helper':
+    'prefix': 'registerhelper'
+    'body': 'Template.registerHelper \'${1:name}\', ({$2:})->'
