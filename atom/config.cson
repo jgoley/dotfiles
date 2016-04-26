@@ -3,6 +3,9 @@
   "bracket-matcher":
     autocompleteSmartQuotes: false
   core:
+    disabledPackages: [
+      "stylus-autocompile"
+    ]
     themes: [
       "one-dark-ui"
       "monokai-slate"
@@ -24,6 +27,7 @@
   ]
   "linter-stylint": {}
   "markdown-preview": {}
+  "merge-conflicts": {}
   minimap:
     plugins:
       cursorline: true
@@ -32,6 +36,9 @@
       "find-and-replaceDecorationsZIndex": 0
       selection: true
       selectionDecorationsZIndex: 0
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   pigments: {}
   "spell-check": {}
   "stylus-autocompile": {}

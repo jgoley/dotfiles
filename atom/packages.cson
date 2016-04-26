@@ -1,7 +1,11 @@
 packages: [
+  "advanced-new-file"
+  "atom-alignment"
+  "atom-increment"
   "atom-jade"
   "atom-monokai"
   "date"
+  "emmet"
   "file-icons"
   "git-diff-details"
   "git-difftool"
@@ -22,6 +26,5 @@ packages: [
   "predawn-twilight"
   "predawn-ui"
   "Stylus"
-  "stylus-autocompile"
   "tabs-to-spaces"
 ]
