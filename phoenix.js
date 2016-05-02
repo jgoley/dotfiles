@@ -7,6 +7,12 @@ hyper = [
   'shift'
 ]
 
+appMash = [
+  'cmd'
+  'alt'
+  'ctrl'
+]
+
 keys = []
 MARGIN_X = 5
 MARGIN_Y = 5
@@ -102,14 +108,20 @@ keys.push Phoenix.bind 'H', hyper, ->
 keys.push Phoenix.bind 'L', hyper, ->
   win = Window.focusedWindow()
   f = win.getGrid()
-  f.x = Math.min(f.x + 1, GRID_WIDTH - (f.w))
+  f.x = Math.min(f.x + 1, GRID_WIDTH - f.w)
   win.setGrid f, win.screen()
 
-# Expand window to right
+# Expand window to right.
+# If window is against the right side of screen and not full screen,
+# window will expand to left
 keys.push Phoenix.bind 'O', hyper, ->
   win = Window.focusedWindow()
   f = win.getGrid()
-  f.w = Math.min(f.w + 1, GRID_WIDTH - (f.x))
+  if f.w == GRID_WIDTH - f.x and f.x isnt 0
+    ++f.w
+    --f.x
+  else
+    f.w = Math.min(f.w + 1, GRID_WIDTH - f.x)
   win.setGrid f, win.screen()
 
 # Compress window to left
@@ -142,3 +154,13 @@ keys.push Phoenix.bind 'U', hyper, ->
   f.y = 0
   f.h = 2
   win.setGrid f, win.screen()
+
+###
+ App related Key Bindings
+###
+
+keys.push Phoenix.bind 'T', appMash, ->
+  App.launch('Terminal').focus()
+
+keys.push Phoenix.bind 'C', appMash, ->
+  App.launch('Google Chrome').focus()
