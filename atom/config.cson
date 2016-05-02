@@ -1,4 +1,18 @@
 "*":
+  "block-cursor":
+    global:
+      blinkOff: {}
+      blinkOn:
+        backgroundColor:
+          red: 218
+          green: 170
+          blue: 124
+          alpha: '.7'
+        borderColor:
+          red: 218
+          green: 170
+          blue: 124
+          alpha: 0
   "bracket-matcher":
     autocompleteSmartQuotes: false
   core:
@@ -28,6 +42,7 @@
   "git-diff":
     showIconsInEditorGutter: true
   minimap:
+    displayCodeHighlights: false
     plugins:
       cursorline: true
       cursorlineDecorationsZIndex: 0
@@ -35,14 +50,21 @@
       "find-and-replaceDecorationsZIndex": 0
       selection: true
       selectionDecorationsZIndex: 0
+  "one-dark-ui": {}
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
