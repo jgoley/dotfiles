@@ -1,10 +1,16 @@
 "*":
-  "atom-alignment": {}
   "bracket-matcher":
     autocompleteSmartQuotes: false
   core:
-    disabledPackages: [
-      "stylus-autocompile"
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "Thumbs.db"
+      ".meteor"
+      "node_modules"
+      "bower_components"
     ]
     themes: [
       "one-dark-ui"
@@ -21,13 +27,6 @@
     userId: "54637407-dc39-5669-13b4-c71ec84fe2b9"
   "git-diff":
     showIconsInEditorGutter: true
-  "highlight-selected": {}
-  ignore: [
-    "/.meteor"
-  ]
-  "linter-stylint": {}
-  "markdown-preview": {}
-  "merge-conflicts": {}
   minimap:
     plugins:
       cursorline: true
@@ -39,13 +38,11 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
-  pigments: {}
-  "spell-check": {}
-  "stylus-autocompile": {}
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
