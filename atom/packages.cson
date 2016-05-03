@@ -1,6 +1,7 @@
 packages: [
   "alignment"
   "atom-jade"
+  "atom-material-syntax"
   "atom-monokai"
   "block-cursor"
   "color-picker"
@@ -23,6 +24,7 @@ packages: [
   "one-dark-vivid-syntax"
   "package-sync"
   "pigments"
+  "project-folder"
   "snippets-jade"
   "Stylus"
   "synced-sidebar"

@@ -20,6 +20,14 @@
   background-color: #333333;
 }
 
+.file.list-item.selected {
+  color: #333333;
+}
+
+.tree-view .selected:before {
+  background-color: #282828;
+}
+
 .atom-pane {
   background-color: #282828;
 }
@@ -28,6 +36,27 @@
 atom-text-editor {
   color: white;
   background-color: #282828;
+}
+
+.tab-bar .tab::before {
+  width: 100%;
+  bottom: 0;
+  height: 1px;
+  top: auto;
+  background-color: #F4BF75;
+}
+
+.tab-bar .tab {
+  height: 2.75em;
+  line-height: 2.75em;
+}
+
+.tab-bar {
+    height: 2.75em;
+}
+
+atom-pane-container atom-pane {
+  padding-top: 0;
 }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
