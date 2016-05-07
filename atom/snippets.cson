@@ -25,11 +25,11 @@
 
   'Meteor: Template events':
     'prefix': 'events'
-    'body': 'Template.${1:name}.helpers\n  \'${2:event} ${3:el}\': (event, instance) ->\n    ${4:}'
+    'body': 'Template.${1:name}.events\n ${2:event} ${3:el}\: (event, instance) ->\n    ${4:}'
 
   'Meteor: Template helpers':
     'prefix': 'helpers'
-    'body': 'Template.${1:name}.helpers\n  ${2:event}: ->\n    ${3:}'
+    'body': 'Template.${1:name}.helpers\n  ${2:helper}: ->\n    ${3:}'
 
   'Meteor: Methods':
     'prefix': 'methods'

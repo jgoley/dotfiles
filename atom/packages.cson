@@ -26,6 +26,7 @@ packages: [
   "pigments"
   "project-folder"
   "snippets-jade"
+  "split-diff"
   "Stylus"
   "synced-sidebar"
   "vim-mode"
