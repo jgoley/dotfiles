@@ -1,0 +1,3 @@
+[submodule "terminal/one-dark"]
+	path = terminal/one-dark
+	url = git@github.com:jgoley/atom-one-dark-terminal.git
