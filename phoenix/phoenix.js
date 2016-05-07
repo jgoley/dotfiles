@@ -93,6 +93,10 @@ keys.push Phoenix.bind 'up', hyper, ->
 keys.push Phoenix.bind 'down', hyper, ->
   Window.focusedWindow().focusClosestWindowInSouth()
 
+keys.push Phoenix.bind 'P', hyper, ->
+  win = Window.focusedWindow()
+  win.setGrid win.getGrid(), win.screen().previous()
+
 # Fill window to screen
 keys.push Phoenix.bind 'M', hyper, ->
   win = Window.focusedWindow().maximize()
