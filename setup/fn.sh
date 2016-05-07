@@ -3,7 +3,7 @@ NORM=$(tput sgr0)
 GREEN="\033[32m"
 WHITE="\033[m"
 
-homebrew_install () {
+install_homebrew () {
   echo $BOLD'Installing Homebrew'$NORM
   which -s brew
   if [ $? != 0 ]

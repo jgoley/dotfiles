@@ -6,7 +6,7 @@ dotfiles_folder=~/code/dotfiles
 
 install_zsh
 
-homebrew_install
+install_homebrew
 
 dotfiles='git phoenix zsh atom'
 link_dotfiles
