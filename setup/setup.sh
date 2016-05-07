@@ -8,8 +8,6 @@ install_zsh
 
 install_homebrew
 
-dotfiles='git phoenix zsh atom'
-link_dotfiles
+. link_dotfiles.sh
 
-cd $dotfiles_folder/OSX
-sh set-OSX-defaults.sh
+. $dotfiles_folder/OSX/set-OSX-defaults.sh
