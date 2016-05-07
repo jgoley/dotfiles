@@ -1,13 +1,11 @@
 #!/bin/bash
 
-. fn.sh
+. variables.sh
 
-dotfiles_folder=~/code/dotfiles
+. install_zsh.sh
 
-install_zsh
-
-install_homebrew
+. $dotfiles_folder/homebrew/install_homebrew.sh
 
 . link_dotfiles.sh
 
-. $dotfiles_folder/OSX/set-OSX-defaults.sh
+. $dotfiles_folder/OSX/set-defaults.sh
