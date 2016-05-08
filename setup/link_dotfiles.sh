@@ -3,6 +3,7 @@
 dotfiles='git phoenix zsh atom'
 
 link_files () {
+  cd $dotfiles_folder
   for file in `ls $folder`
     do
       current_dir=`pwd`
@@ -12,16 +13,14 @@ link_files () {
       if [ ! -s $path_file_linked ]
       then
         ln -s $path_file $path_file_linked
-        echo ${GREEN}$path_file_linked${WHITE}' linked'
+        echo $GREEN $CHECK $path_file_linked' linked' $WHITE
       else
-        echo ${GREEN}$path_file_linked${WHITE}' already exists, re-linking...'
+        echo $GREEN $REDO $path_file_linked' already exists, re-linked' $WHITE
         rm $path_file_linked
         ln -s $path_file $path_file_linked
       fi
     done
 }
-
-cd $dotfiles_folder
 
 for folder in $dotfiles
   do
