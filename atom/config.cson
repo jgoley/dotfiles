@@ -4,10 +4,10 @@
       blinkOff: {}
       blinkOn:
         backgroundColor:
-          red: 128
-          green: 226
-          blue: 255
-          alpha: 0.7
+          red: 178
+          green: 214
+          blue: 149
+          alpha: 0.75
         borderColor:
           red: 218
           green: 170
@@ -16,6 +16,11 @@
   "bracket-matcher":
     autocompleteSmartQuotes: false
   core:
+    disabledPackages: [
+      "vim-mode"
+      "line-diff-details"
+      "bracket-matcher"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -32,8 +37,9 @@
     ]
   date: {}
   editor:
-    fontSize: 13
+    fontSize: 22
     invisibles: {}
+    lineHeight: 1.7
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
@@ -42,8 +48,12 @@
     userId: "54637407-dc39-5669-13b4-c71ec84fe2b9"
   "git-diff":
     showIconsInEditorGutter: true
+  "highlight-line":
+    hideHighlightOnSelect: true
   minimap:
     displayCodeHighlights: false
+    ignoreWhitespacesInTokens: true
+    independentMinimapScroll: true
     plugins:
       cursorline: true
       cursorlineDecorationsZIndex: 0
@@ -65,12 +75,23 @@
     leftEditorColor: "red"
     rightEditorColor: "green"
     syncHorizontalScroll: true
+  "tabs-to-spaces":
+    onSave: "untabify"
   "tool-bar":
     iconSize: "16px"
     position: "Left"
   "tree-view":
+    focusOnReveal: false
     hideVcsIgnoredFiles: false
   "vim-mode":
+    wrapLeftRightMotion: true
+  "vim-mode-clipboard-plus":
+    useVimModePlus: true
+  "vim-mode-plus":
+    clearHighlightSearchOnResetNormalMode: true
+    flashOnOperateDuration: 200
+    flashOnUndoRedoDuration: 200
+    useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
   welcome:
     showOnStartup: false
