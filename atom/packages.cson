@@ -15,6 +15,7 @@ packages: [
   "jade-bootstrap3-snippets"
   "javascript-snippets"
   "language-applescript"
+  "line-diff-details"
   "linter"
   "linter-coffeescript"
   "linter-jade"

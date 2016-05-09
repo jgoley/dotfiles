@@ -18,8 +18,11 @@
   core:
     disabledPackages: [
       "vim-mode"
-      "line-diff-details"
       "bracket-matcher"
+      "minimap"
+      "minimap-cursorline"
+      "minimap-highlight-selected"
+      "minimap-selection"
     ]
     ignoredNames: [
       ".git"
@@ -31,13 +34,14 @@
       "node_modules"
       "bower_components"
     ]
+    packagesWithKeymapsDisabled: []
     themes: [
       "one-dark-ui"
       "monokai-slate"
     ]
   date: {}
   editor:
-    fontSize: 22
+    fontSize: 21
     invisibles: {}
     lineHeight: 1.7
     showIndentGuide: true
@@ -46,8 +50,7 @@
     tabType: "soft"
   "exception-reporting":
     userId: "54637407-dc39-5669-13b4-c71ec84fe2b9"
-  "git-diff":
-    showIconsInEditorGutter: true
+  "git-diff": {}
   "highlight-line":
     hideHighlightOnSelect: true
   minimap:

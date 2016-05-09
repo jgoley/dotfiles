@@ -1,15 +1,24 @@
-@pane-BG:          hsla(60, 11%, 11%, 1.00);
-@selected:         rgba(131, 131, 131, .2);
+@pane-BG:          hsla(53, 17%, 10%, 1.00);
+@pane-BG-dark:     darken(@pane-BG, 2%);
+@selected:         rgba(131, 131, 131, .1);
 @tree-selected:    @selected;
 @gutter-selection: @selected;
 @highlight:        hsla(35, 85%, 71%, 1.00);
 @selection:        @selected;
 
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 atom-text-editor {
   color: white;
   background-color: @pane-BG;
 }
-
+atom-pane-container atom-pane .item-views .pane-item,
+.settings-view > .panels,
+.settings-view .config-menu,
 .atom-pane {
   background-color: @pane-BG;
 }
@@ -26,20 +35,23 @@ atom-pane-container atom-pane {
   background-color: @tree-selected;
 }
 
-.tab-bar .tab::before {
-  width: 100%;
-  top: 0;
-  height: 1px;
-  background-color: @highlight;
-}
-
-.tab-bar .tab {
-  height: 2.75em;
-  line-height: 2.75em;
-}
-
 .tab-bar {
   height: 2.75em;
+  background-color: @pane-BG;
+  .tab::before {
+    width: 100%;
+    top: 0;
+    height: 1px;
+    background-color: @highlight;
+  }
+  .tab {
+    background: @pane-BG-dark;
+    height: 2.75em;
+    line-height: 2.75em;
+    .title {
+      background-color: @pane-BG-dark;
+    }
+  }
 }
 
 #status-bar-vim-mode {
@@ -71,12 +83,29 @@ atom-text-editor::shadow .highlight.find-result .region {
 atom-text-editor::shadow .line-number.cursor-line-no-selection,
 atom-text-editor::shadow .gutter .cursor-line,
 :host .line-number.cursor-line-no-selection,
-:host .gutter .cursor-line
-{
+:host .gutter .cursor-line {
   background-color: @gutter-selection;
 }
 
 atom-text-editor::shadow .gutter {
-  // opacity: .2;
+  background-color: @pane-BG-dark;
+  border-right: 1px solid hsla(60, 5%, 9%, 1.00);
+  &:last-of-type{
+    display: none;
+    border-right: 1px solid hsla(60, 5%, 9%, 1.00);
+  }
+  .line-number {
+    color: hsla(53, 9%, 29%, 1.00);
+    margin: 0;
+    background-color: @pane-BG-dark;
+  }
+}
 
+atom-text-editor::shadow .gutter .line-numbers {
+  margin: 0;
+  .line-number {
+    &.cursor-line {
+      background-color: @selection;
+    }
+  }
 }
