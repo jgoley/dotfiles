@@ -1,8 +1,8 @@
 @pane-BG:          hsla(53, 17%, 10%, 1.00);
 @pane-BG-dark:     darken(@pane-BG, 2%);
-@selected:         rgba(131, 131, 131, .1);
+@selected:         darken(desaturate(fadeout(#118AFF, 85%), 50%), 25%);
 @tree-selected:    @selected;
-@gutter-selection: @selected;
+  @gutter-selection: @selected;
 @highlight:        hsla(35, 85%, 71%, 1.00);
 @selection:        @selected;
 
@@ -12,100 +12,167 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-atom-text-editor {
-  color: white;
-  background-color: @pane-BG;
-}
-atom-pane-container atom-pane .item-views .pane-item,
-.settings-view > .panels,
-.settings-view .config-menu,
-.atom-pane {
-  background-color: @pane-BG;
-}
+.theme-one-dark-ui{
 
-atom-pane-container atom-pane {
-  padding-top: 0;
-}
-
-.tree-view {
-  background-color: @pane-BG;
-}
-
-.tree-view .selected:before {
-  background-color: @tree-selected;
-}
-
-.tab-bar {
-  height: 2.75em;
-  background-color: @pane-BG;
-  .tab::before {
-    width: 100%;
-    top: 0;
-    height: 1px;
-    background-color: @highlight;
+  atom-text-editor {
+    color: white;
+    background-color: @pane-BG;
   }
-  .tab {
-    background: @pane-BG-dark;
-    height: 2.75em;
-    line-height: 2.75em;
-    .title {
-      background-color: @pane-BG-dark;
-    }
+  atom-workspace,
+  atom-pane-container atom-pane .item-views .pane-item,
+  atom-pane-container atom-pane .item-views,
+  .settings-view > .panels,
+  .settings-view .config-menu,
+  .atom-pane {
+    background-color: @pane-BG;
   }
-}
 
-#status-bar-vim-mode {
-  display: none;
-}
-
-atom-text-editor.vim-mode-plus.normal-mode.is-focused::shadow .cursor,
-atom-text-editor.vim-mode-plus.normal-mode.is-focused .cursor{
-  background-color: @highlight;
-  opacity: .75;
-}
-
-atom-text-editor.vim-mode-plus.visual-mode.is-focused::shadow .cursor,
-atom-text-editor.vim-mode-plus.visual-mode.is-focused .cursor {
-  background-color: @selection;
-  opacity: .75;
-}
-
-atom-text-editor::shadow .selection .region,
-:host .selection .region {
-  background-color: @selection;
-  z-index: -1;
-}
-
-atom-text-editor::shadow .highlight.find-result .region {
-  background: @selection;
-}
-
-atom-text-editor::shadow .line-number.cursor-line-no-selection,
-atom-text-editor::shadow .gutter .cursor-line,
-:host .line-number.cursor-line-no-selection,
-:host .gutter .cursor-line {
-  background-color: @gutter-selection;
-}
-
-atom-text-editor::shadow .gutter {
-  background-color: @pane-BG-dark;
-  border-right: 1px solid hsla(60, 5%, 9%, 1.00);
-  &:last-of-type{
-    display: none;
-    border-right: 1px solid hsla(60, 5%, 9%, 1.00);
-  }
-  .line-number {
-    color: hsla(53, 9%, 29%, 1.00);
-    margin: 0;
+  atom-pane-resize-handle {
     background-color: @pane-BG-dark;
   }
-}
 
-atom-text-editor::shadow .gutter .line-numbers {
-  margin: 0;
-  .line-number {
-    &.cursor-line {
-      background-color: @selection;
+
+  atom-pane-container atom-pane {
+    padding-top: 0;
+  }
+
+  .tree-view {
+    background-color: @pane-BG;
+  }
+
+  .tree-view .selected:before {
+    background-color: @tree-selected;
+  }
+
+  .tab-bar {
+    height: 2.75em;
+    background-color: @pane-BG;
+    border-bottom: 1px solid darken(@pane-BG-dark, .05%);
+    .tab::before {
+      width: 100%;
+      top: 0;
+      height: 1px;
+      background-color: darken(desaturate(@highlight, 50%),20%);
     }
+    .tab {
+      background: @pane-BG;
+      height: 2.75em;
+      line-height: 2.75em;
+      box-shadow: none;
+      border-right: 1px solid @pane-BG-dark;
+      .title {
+        padding: 0 .5em;
+        margin: 0;
+        background-color: @pane-BG;
+      }
+      &:first-child {
+        border-width: 1px;
+      }
+    }
+  }
+
+  .tab-bar .tab.active,
+  .tab-bar .tab.active + .tab {
+    border-image: none;
+  }
+
+  .tab-bar .tab.active[data-type$="Editor"],
+  .tab-bar .tab.active[data-type="MarkdownPreviewView"]{
+    background-color: @pane-BG-dark;
+  }
+  .tab-bar .tab.active[data-type$="Editor"] .title,
+  .tab-bar .tab.active[data-type="MarkdownPreviewView"] .title {
+    background-color: @pane-BG-dark;
+    box-shadow: none;
+    -webkit-mask: none;
+    border: 0;
+  }
+  #status-bar-vim-mode {
+    display: none;
+  }
+
+  atom-text-editor.vim-mode-plus.normal-mode.is-focused::shadow .cursor,
+  atom-text-editor.vim-mode-plus.normal-mode.is-focused .cursor{
+    background-color: @highlight;
+    opacity: .75;
+  }
+
+  atom-text-editor.vim-mode-plus.visual-mode.is-focused::shadow .cursor,
+  atom-text-editor.vim-mode-plus.visual-mode.is-focused .cursor {
+    background-color: @selection;
+    opacity: .75;
+  }
+  atom-text-editor::shadow .selection .region,
+  :host .selection .region {
+    background-color: lighten(@selection, 10%);
+    z-index: -1;
+  }
+
+  atom-text-editor::shadow .highlight.find-result .region {
+    background: @selection;
+  }
+
+  atom-text-editor::shadow .gutter .line-numbers .line-number.cursor-line-no-selection {
+    background-color: rgba(100, 100, 100, 0.15) !important;
+  }
+
+  atom-text-editor::shadow .line-number.cursor-line-no-selection,
+  atom-text-editor::shadow .gutter .cursor-line,
+  :host .line-number.cursor-line-no-selection,
+  :host .gutter .cursor-line {
+    background-color: @gutter-selection;
+  }
+
+  atom-text-editor::shadow .gutter {
+    &:first-of-type{
+      background-color: hsla(48, 20%, 10%, 1.00);
+    }
+    background-color: @pane-BG;
+    .line-number {
+      color: hsla(53, 9%, 29%, 1.00);
+      margin: 0;
+      background-color: @pane-BG;
+    }
+  }
+
+  atom-text-editor::shadow .gutter .line-numbers {
+    margin: 0;
+    .line-number {
+      &.cursor-line,
+      &.cursor-line-no-selection {
+        background-color: @selection;
+        margin-top: -1px;
+      }
+    }
+  }
+
+  atom-text-editor::shadow .gutter .line-number{
+    background-color: @pane-BG;
+  }
+
+  .line-number{
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      right: 0;
+      content: '';
+      display: block;
+    }
+  }
+  .status-bar .flexbox-repaint-hack {
+    padding-left: 0;
+  }
+
+  .tool-panel,
+  atom-panel,
+  .status-bar {
+    background-color: @pane-BG;
+  }
+
+  atom-text-editor::shadow .wrap-guide {
+    background: none;
+    border-color: @pane-BG-dark;
   }
 }

@@ -13,16 +13,17 @@
           green: 170
           blue: 124
           alpha: 0
+      pulseDuration: 200
   "bracket-matcher":
     autocompleteSmartQuotes: false
   core:
     disabledPackages: [
-      "vim-mode"
       "bracket-matcher"
       "minimap"
       "minimap-cursorline"
       "minimap-highlight-selected"
       "minimap-selection"
+      "vim-mode"
     ]
     ignoredNames: [
       ".git"
@@ -35,13 +36,13 @@
       "bower_components"
     ]
     packagesWithKeymapsDisabled: []
+    projectHome: "~/code/"
     themes: [
       "one-dark-ui"
       "monokai-slate"
     ]
   date: {}
   editor:
-    fontSize: 21
     invisibles: {}
     lineHeight: 1.7
     showIndentGuide: true
@@ -53,6 +54,9 @@
   "git-diff": {}
   "highlight-line":
     hideHighlightOnSelect: true
+  linter:
+    gutterPosition: "Left"
+    lintOnFly: false
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true
@@ -72,6 +76,8 @@
     projectRootDirectories: [
       "/Users/jgoley/code/"
     ]
+  "relative-numbers":
+    startAtOne: true
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
@@ -85,7 +91,7 @@
     position: "Left"
   "tree-view":
     focusOnReveal: false
-    hideVcsIgnoredFiles: false
+    hideVcsIgnoredFiles: true
   "vim-mode":
     wrapLeftRightMotion: true
   "vim-mode-clipboard-plus":
@@ -94,8 +100,12 @@
     clearHighlightSearchOnResetNormalMode: true
     flashOnOperateDuration: 200
     flashOnUndoRedoDuration: 200
+    setCursorToStartOfChangeOnUndoRedo: true
+    showHoverOnOperateIcon: "emoji"
+    stayOnYank: true
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
+  "vim-surround": {}
   welcome:
     showOnStartup: false
   whitespace:

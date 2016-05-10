@@ -5,11 +5,25 @@
 # https://atom.io/docs/latest/hacking-atom-debugging#check-the-keybindings
 
 'body':
-  'ctrl-]': 'pane:show-next-item'
-  'ctrl-[': 'pane:show-previous-item'
-
+  'ctrl-s':     'jgo:normal-mode-on-save'
+  'ctrl-]':     'pane:show-next-item'
+  'ctrl-[':     'pane:show-previous-item'
+  'ctrl-cmd-s': 'window:save-all'
+'.tree-view':
+  'D': 'tree-view:remove'
 'atom-text-editor.vim-mode.normal-mode':
   'shift-A': 'vim-mode:insert-after-end-of-line'
-
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   ':': 'ex-mode:open'
+'atom-text-editor.vim-mode-plus':
+  'ctrl-[': 'unset!'
+  'ctrl-]': 'unset!'
+'atom-text-editor.vim-mode-plus:not(.normal-mode)':
+  'ctrl-[': 'unset!'
+  'ctrl-]': 'unset!'
+'atom-text-editor.vim-mode-plus':
+  'ctrl-[': 'unset!'
+  'ctrl-]': 'unset!'
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'ctrl-]': 'unset!'
+  'ctrl-[': 'unset!'
