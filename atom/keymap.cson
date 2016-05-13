@@ -9,21 +9,29 @@
   'ctrl-]':     'pane:show-next-item'
   'ctrl-[':     'pane:show-previous-item'
   'ctrl-cmd-s': 'window:save-all'
+
 '.tree-view':
   'D': 'tree-view:remove'
-'atom-text-editor.vim-mode.normal-mode':
-  'shift-A': 'vim-mode:insert-after-end-of-line'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'ctrl-]' : 'unset!'
+  'ctrl-[' : 'unset!'
+  's'      : 'unset!'
+  'shift-A': 'vim-mode-plus:insert-after-end-of-line'
+  's'      : 'vim-mode-plus:surround'
+  's w'    : 'vim-mode-plus:surround-word'
+  'm s'    : 'vim-mode-plus:map-surround'
+  'd s'    : 'vim-mode-plus:delete-surround-any-pair'
+  'c s'    : 'vim-mode-plus:change-surround-any-pair'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+  's'      : 'vim-mode-plus:surround'
+
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   ':': 'ex-mode:open'
-'atom-text-editor.vim-mode-plus':
-  'ctrl-[': 'unset!'
-  'ctrl-]': 'unset!'
-'atom-text-editor.vim-mode-plus:not(.normal-mode)':
-  'ctrl-[': 'unset!'
-  'ctrl-]': 'unset!'
-'atom-text-editor.vim-mode-plus':
-  'ctrl-[': 'unset!'
-  'ctrl-]': 'unset!'
-'atom-text-editor.vim-mode-plus.normal-mode':
-  'ctrl-]': 'unset!'
-  'ctrl-[': 'unset!'
+
+'atom-text-editor.vim-mode-plus-input-char-waiting':
+  's': 'unset!'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+  's': 'unset!'

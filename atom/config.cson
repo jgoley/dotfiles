@@ -24,6 +24,8 @@
       "minimap-highlight-selected"
       "minimap-selection"
       "vim-mode"
+      "vim-surround"
+      "alignment"
     ]
     ignoredNames: [
       ".git"
@@ -45,6 +47,7 @@
   editor:
     invisibles: {}
     lineHeight: 1.7
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     softWrap: true

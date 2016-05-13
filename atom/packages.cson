@@ -49,7 +49,6 @@ packages: [
   "Stylus"
   "synced-sidebar"
   "tabs-to-spaces"
-  "vim-mode"
   "vim-mode-clipboard-plus"
   "vim-mode-plus"
   "vim-surround"
