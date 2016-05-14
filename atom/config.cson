@@ -45,9 +45,11 @@
     ]
   date: {}
   editor:
-    invisibles: {}
+    invisibles:
+      eol: "↴"
+      space: "•"
     lineHeight: 1.7
-    scrollPastEnd: true
+    scrollPastEnd: false
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
@@ -71,7 +73,12 @@
       "find-and-replaceDecorationsZIndex": 0
       selection: true
       selectionDecorationsZIndex: 0
-  "one-dark-ui": {}
+  "one-dark-ui":
+    fontSize: 12
+    layoutMode: "Compact"
+  "one-light-ui":
+    fontSize: 12
+    layoutMode: "Compact"
   "package-sync":
     createOnChange: true
     forceOverwrite: true
@@ -96,6 +103,7 @@
     focusOnReveal: false
     hideVcsIgnoredFiles: true
   "vim-mode":
+    useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
   "vim-mode-clipboard-plus":
     useVimModePlus: true

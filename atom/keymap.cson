@@ -9,6 +9,7 @@
   'ctrl-]':     'pane:show-next-item'
   'ctrl-[':     'pane:show-previous-item'
   'ctrl-cmd-s': 'window:save-all'
+  'ctrl-p':     'unset!'
 
 '.tree-view':
   'D': 'tree-view:remove'
@@ -35,3 +36,6 @@
 
 'atom-text-editor.vim-mode-plus.visual-mode':
   's': 'unset!'
+
+'.platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'ctrl-p': 'clipboard-plus:toggle'
