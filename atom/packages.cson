@@ -4,6 +4,8 @@ packages: [
   "atom-increment"
   "atom-jade"
   "atom-material-syntax"
+  "autocomplete-js-import"
+  "autocomplete-modules"
   "block-cursor"
   "clipboard-plus"
   "danikai-light-syntax"

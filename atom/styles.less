@@ -1,10 +1,12 @@
 @pane-BG:          hsla(53, 17%, 10%, 1.00);
 @pane-BG-dark:     darken(@pane-BG, 2%);
-@selected:         darken(desaturate(fadeout(#118AFF, 85%), 50%), 25%);
+@selected:         darken(desaturate(fadeout(#118AFF, 50%), 90%), 25%);
 @tree-selected:    @selected;
-  @gutter-selection: @selected;
+@gutter-selection: @selected;
 @highlight:        hsla(35, 85%, 71%, 1.00);
 @selection:        @selected;
+@vim-hover:        HSLA(139, 35%, 57%, 1.00);
+
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -24,6 +26,7 @@ atom-text-editor::shadow div.lines div:last-child .line:last-child {
     color: white;
     background-color: @pane-BG;
   }
+
   atom-workspace,
   atom-pane-container atom-pane .item-views .pane-item,
   atom-pane-container atom-pane .item-views,
@@ -86,6 +89,7 @@ atom-text-editor::shadow div.lines div:last-child .line:last-child {
   .tab-bar .tab.active[data-type="MarkdownPreviewView"]{
     background-color: @pane-BG-dark;
   }
+
   .tab-bar .tab.active[data-type$="Editor"] .title,
   .tab-bar .tab.active[data-type="MarkdownPreviewView"] .title {
     background-color: @pane-BG-dark;
@@ -93,6 +97,7 @@ atom-text-editor::shadow div.lines div:last-child .line:last-child {
     -webkit-mask: none;
     border: 0;
   }
+
   #status-bar-vim-mode {
     display: none;
   }
@@ -108,6 +113,16 @@ atom-text-editor::shadow div.lines div:last-child .line:last-child {
     background-color: @selection;
     opacity: .75;
   }
+
+  .vim-mode-plus-hover {
+    background-color: @vim-hover;
+    box-shadow: 0 0 10px @pane-BG;
+    padding: .2em .3em 0 .3em;
+    color: @pane-BG-dark;
+    text-align: center;
+    border-radius: 1px;
+  }
+
   atom-text-editor::shadow .selection .region,
   :host .selection .region {
     background-color: lighten(@selection, 10%);
@@ -118,8 +133,15 @@ atom-text-editor::shadow div.lines div:last-child .line:last-child {
     background: @selection;
   }
 
+  .atom-text-editor .line.highlight-line,
+  :host .line.highlight-line,
+  atom-text-editor .line.highlight-line,
+  atom-text-editor::shadow .line.highlight-line {
+    background-color: fadeout(@selected, 20%) !important;
+  }
+
   atom-text-editor::shadow .gutter .line-numbers .line-number.cursor-line-no-selection {
-    background-color: rgba(100, 100, 100, 0.15) !important;
+    background-color: fadeout(@selected, 20%) !important;
   }
 
   atom-text-editor::shadow .line-number.cursor-line-no-selection,

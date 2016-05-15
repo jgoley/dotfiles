@@ -1,4 +1,8 @@
 "*":
+  "autocomplete-js-import":
+    importTypes:
+      es6: false
+    projectDependencies: {}
   "block-cursor":
     global:
       blinkOff: {}
@@ -26,6 +30,7 @@
       "vim-mode"
       "vim-surround"
       "alignment"
+      "linter"
     ]
     ignoredNames: [
       ".git"
@@ -45,6 +50,7 @@
     ]
   date: {}
   editor:
+    fontSize: 12
     invisibles:
       eol: "↴"
       space: "•"
@@ -75,7 +81,6 @@
       selectionDecorationsZIndex: 0
   "one-dark-ui":
     fontSize: 12
-    layoutMode: "Compact"
   "one-light-ui":
     fontSize: 12
     layoutMode: "Compact"
@@ -89,7 +94,6 @@
   "relative-numbers":
     startAtOne: true
   "split-diff":
-    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
@@ -101,7 +105,6 @@
     position: "Left"
   "tree-view":
     focusOnReveal: false
-    hideVcsIgnoredFiles: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true

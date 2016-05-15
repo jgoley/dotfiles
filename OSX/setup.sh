@@ -5,5 +5,5 @@ echo $BOLD'Setting OSX defaults...'$NORM
 echo $GREEN $CHECK' Done'$WHITE
 
 echo $BOLD'Setting Terminal theme...'$NORM
-osascript ../terminal/terminal.scpt
+osascript ../terminal/terminal-default.scpt
 sleep .5

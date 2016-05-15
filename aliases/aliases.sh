@@ -1,3 +1,5 @@
+. ~/code/dotfiles/setup/variables.sh
+
 alias zr='exec zsh'
 
 alias rf='rm -rf'
@@ -13,6 +15,7 @@ alias gcm='git commit -m '
 alias gpf='git push -f'
 alias grbi='git rebase -i HEAD~'
 alias gcan='git commit -v -a --no-edit --amend'
+alias gcanp='git commit -v -a --no-edit --amend ; gpf'
 
 alias bowi='bower install'
 alias bowis='bower install --save'
@@ -26,3 +29,8 @@ alias mtrnpm='meteor npm install --save'
 alias mtrcp='meteor create --package'
 
 alias ve='source ../venv/bin/activate'
+
+alias god='sh $dotfiles_folder/util/go_dark.sh'
+alias gol='sh $dotfiles_folder/util/go_light.sh'
+
+alias dots='~/code/dotfiles'

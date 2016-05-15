@@ -6,6 +6,7 @@ brew 'node'
 brew 'meteor'
 brew 'youtube-dl'
 brew 'awscli'
+brew 'dark-mode'
 
 cask '1password'
 cask 'atom'
