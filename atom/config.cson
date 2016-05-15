@@ -1,4 +1,8 @@
 "*":
+  "autocomplete-js-import":
+    importTypes:
+      es6: false
+    projectDependencies: {}
   "block-cursor":
     global:
       blinkOff: {}
@@ -13,13 +17,20 @@
           green: 170
           blue: 124
           alpha: 0
+      pulseDuration: 200
   "bracket-matcher":
     autocompleteSmartQuotes: false
   core:
     disabledPackages: [
-      "vim-mode"
-      "line-diff-details"
       "bracket-matcher"
+      "minimap"
+      "minimap-cursorline"
+      "minimap-highlight-selected"
+      "minimap-selection"
+      "vim-mode"
+      "vim-surround"
+      "alignment"
+      "linter"
     ]
     ignoredNames: [
       ".git"
@@ -31,25 +42,32 @@
       "node_modules"
       "bower_components"
     ]
+    packagesWithKeymapsDisabled: []
+    projectHome: "~/code/"
     themes: [
       "one-dark-ui"
       "monokai-slate"
     ]
   date: {}
   editor:
-    fontSize: 22
-    invisibles: {}
+    fontSize: 12
+    invisibles:
+      eol: "↴"
+      space: "•"
     lineHeight: 1.7
+    scrollPastEnd: false
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
     tabType: "soft"
   "exception-reporting":
     userId: "54637407-dc39-5669-13b4-c71ec84fe2b9"
-  "git-diff":
-    showIconsInEditorGutter: true
+  "git-diff": {}
   "highlight-line":
     hideHighlightOnSelect: true
+  linter:
+    gutterPosition: "Left"
+    lintOnFly: false
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true
@@ -61,16 +79,23 @@
       "find-and-replaceDecorationsZIndex": 0
       selection: true
       selectionDecorationsZIndex: 0
-  "one-dark-ui": {}
+  "one-dark-ui":
+    fontSize: 12
+  "one-light-ui":
+    fontSize: 12
+    layoutMode: "Compact"
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  pigments:
+    markerType: "dot"
   "project-folder":
     projectRootDirectories: [
       "/Users/jgoley/code/"
     ]
+  "relative-numbers":
+    startAtOne: true
   "split-diff":
-    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
@@ -82,8 +107,8 @@
     position: "Left"
   "tree-view":
     focusOnReveal: false
-    hideVcsIgnoredFiles: false
   "vim-mode":
+    useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
   "vim-mode-clipboard-plus":
     useVimModePlus: true
@@ -91,8 +116,12 @@
     clearHighlightSearchOnResetNormalMode: true
     flashOnOperateDuration: 200
     flashOnUndoRedoDuration: 200
+    setCursorToStartOfChangeOnUndoRedo: true
+    showHoverOnOperateIcon: "emoji"
+    stayOnYank: true
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
+  "vim-surround": {}
   welcome:
     showOnStartup: false
   whitespace:

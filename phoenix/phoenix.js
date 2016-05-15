@@ -163,8 +163,5 @@ keys.push Phoenix.bind 'U', hyper, ->
  App related Key Bindings
 ###
 
-keys.push Phoenix.bind 'T', appMash, ->
-  App.launch('Terminal').focus()
-
 keys.push Phoenix.bind 'C', appMash, ->
   App.launch('Google Chrome').focus()

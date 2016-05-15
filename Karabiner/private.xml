@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>JGo Customs</name>
+    <item>
+      <name>Remap Control to caps lock</name>
+      <identifier>jgo.control_TO_caps</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CAPSLOCK,
+        KeyCode::CONTROL_L
+      </autogen>
+    </item>
+
+    <item>
+      <name>Switch cursor left to ctrl-h</name>
+      <identifier>jgo.left_TO_H</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::H, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::B, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
+
+  </item>
+
+</root>

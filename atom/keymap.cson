@@ -5,11 +5,46 @@
 # https://atom.io/docs/latest/hacking-atom-debugging#check-the-keybindings
 
 'body':
-  'ctrl-]': 'pane:show-next-item'
-  'ctrl-[': 'pane:show-previous-item'
+  'ctrl-s'           : 'jgo:normal-mode-on-save'
+  'ctrl-]'           : 'pane:show-next-item'
+  'ctrl-['           : 'pane:show-previous-item'
+  'ctrl-cmd-s'       : 'window:save-all'
+  'ctrl-p'           : 'unset!'
+  'ctrl-/'           : 'editor:indent-selected-rows'
+  'ctrl-.'           : 'editor:outdent-selected-rows'
+  'ctrl-cmd-shift-l' : 'jgo:go-light'
+  'ctrl-cmd-shift-d' : 'jgo:go-dark'
 
-'atom-text-editor.vim-mode.normal-mode':
-  'shift-A': 'vim-mode:insert-after-end-of-line'
+'.tree-view':
+  'D': 'tree-view:remove'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'ctrl-]' : 'unset!'
+  'ctrl-[' : 'unset!'
+  's'      : 'unset!'
+  'shift-A': 'vim-mode-plus:insert-after-end-of-line'
+  's'      : 'vim-mode-plus:surround'
+  's w'    : 'vim-mode-plus:surround-word'
+  'm s'    : 'vim-mode-plus:map-surround'
+  'D s'    : 'vim-mode-plus:delete-surround-any-pair'
+  'C s'    : 'vim-mode-plus:change-surround'
+  'd s'    : 'vim-mode-plus:delete-surround-any-pair'
+  'c s'    : 'vim-mode-plus:change-surround'
+  'ctrl-k' : 'jgo:insert-newline-above-stay-normal'
+  'ctrl-j' : 'jgo:insert-newline-below-stay-normal'
+  ')'      : 'vim-mode-plus:move-to-first-character-of-line'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+  's': 'vim-mode-plus:surround'
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   ':': 'ex-mode:open'
+
+'atom-text-editor.vim-mode-plus-input-char-waiting':
+  's': 'unset!'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+  's': 'unset!'
+
+'.platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'ctrl-p': 'clipboard-plus:toggle'
