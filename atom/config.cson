@@ -116,8 +116,11 @@
     clearHighlightSearchOnResetNormalMode: true
     flashOnOperateDuration: 200
     flashOnUndoRedoDuration: 200
+    highlightSearch: true
+    ignoreCaseForSearch: true
     setCursorToStartOfChangeOnUndoRedo: true
-    showHoverOnOperateIcon: "emoji"
+    showHoverOnOperate: true
+    showHoverOnOperateIcon: "none"
     stayOnYank: true
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
