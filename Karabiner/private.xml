@@ -1,8 +1,19 @@
 <?xml version="1.0"?>
 <root>
+  <appdef>
+    <appname>ATOM</appname>
+    <equal>com.github.atom</equal>
+  </appdef>
 
+  <appdef>
+    <appname>CHROME</appname>
+    <equal>com.google.Chrome</equal>
+  </appdef>
+</root>
+
+<root>
   <item>
-    <name>JGo Customs</name>
+    <name>Basic Remaps</name>
     <item>
       <name>Remap Control to caps lock</name>
       <identifier>jgo.control_TO_caps</identifier>
@@ -12,17 +23,157 @@
         KeyCode::CONTROL_L
       </autogen>
     </item>
-
     <item>
-      <name>Switch cursor left to ctrl-h</name>
-      <identifier>jgo.left_TO_H</identifier>
+      <name>Remap cmd-w to ctr-w</name>
+      <identifier>jgo.close</identifier>
       <autogen>
         __KeyToKey__
-        KeyCode::H, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-        KeyCode::B, ModifierFlag::CONTROL_L
+        KeyCode::W, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::W, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Remap cmd-s to ctrl-s</name>
+      <identifier>jgo.save</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::S, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::S, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+  </item>
+  <item>
+    <name>Directional Navigation</name>
+    <item>
+      <name>Vim-like</name>
+      <item>
+        <name>Left</name>
+        <identifier>jgo.keyboard_left</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::H, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::CURSOR_LEFT
+        </autogen>
+      </item>
+
+      <item>
+        <name>Right</name>
+        <identifier>jgo.keyboard_right</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::L, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::CURSOR_RIGHT
+        </autogen>
+      </item>
+      <item>
+        <name>Delete to end</name>
+        <identifier>jgo.delete_to_end</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::4, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::K, ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+      <item>
+        <name>Up</name>
+        <identifier>jgo.keyboard_up</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::K, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::CURSOR_UP
+        </autogen>
+      </item>
+
+      <item>
+        <name>Down</name>
+        <identifier>jgo.keyboard_down</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::J, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::CURSOR_DOWN
+        </autogen>
+      </item>
+
+      <item>
+        <name>Move to end</name>
+        <identifier>jgo.to_end</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::4, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::E, ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+
+
+      <item>
+        <name>Delete to beginning</name>
+        <identifier>jgo.delete_to_beginning</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::0, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::D, ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+
+      <item>
+        <name>move to beginning</name>
+        <identifier>jgo.to_beginning</identifier>
+        <not>ATOM</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::0, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+          KeyCode::A, ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+    </item>
+  </item>
+
+  <item>
+    <name>Switchers</name>
+    <item>
+      <name>Switch Right tab select</name>
+      <identifier>jgo.right_tab</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_RIGHT, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
     </item>
 
+    <item>
+      <name>Left tab select</name>
+      <identifier>jgo.left_tab</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_LEFT, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+    <item>
+      <name>Switch cmd-tab to ctrl-space</name>
+      <identifier>jgo.app_switcher</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::TAB, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Switch cmd-~ ctrl-shift-space</name>
+      <identifier>jgo.app_switcher_reverse</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BACKSLASH, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
   </item>
-
 </root>

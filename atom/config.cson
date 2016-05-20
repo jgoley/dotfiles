@@ -22,7 +22,6 @@
     autocompleteSmartQuotes: false
   core:
     disabledPackages: [
-      "bracket-matcher"
       "minimap"
       "minimap-cursorline"
       "minimap-highlight-selected"
@@ -62,6 +61,9 @@
     tabType: "soft"
   "exception-reporting":
     userId: "54637407-dc39-5669-13b4-c71ec84fe2b9"
+  "genesis-ui":
+    distractionFree: {}
+    treeView: {}
   "git-diff": {}
   "highlight-line":
     hideHighlightOnSelect: true
@@ -84,6 +86,8 @@
   "one-light-ui":
     fontSize: 12
     layoutMode: "Compact"
+  "package-generator":
+    packageSyntax: "coffeescript"
   "package-sync":
     createOnChange: true
     forceOverwrite: true

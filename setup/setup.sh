@@ -9,3 +9,5 @@
 . link_dotfiles.sh
 
 . $dotfiles_folder/OSX/set-defaults.sh
+
+sh $dotfiles_folder/Karabiner/karabiner-import.sh

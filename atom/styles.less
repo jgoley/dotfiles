@@ -7,6 +7,7 @@
 @selection:        @selected;
 @vim-hover:        HSLA(139, 35%, 57%, 1.00);
 
+@app-background-color: @pane-BG;
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -26,7 +27,7 @@ pigments-color-marker.dot {
   transform: translate(100%, -50%) scale(.9);
 }
 
-.theme-one-dark-ui{
+.theme-one-dark-ui {
   atom-text-editor {
     color: white;
     background-color: @pane-BG;
@@ -207,5 +208,11 @@ pigments-color-marker.dot {
   atom-text-editor::shadow .wrap-guide {
     background: none;
     border-color: @pane-BG-dark;
+  }
+
+  atom-text-editor, atom-text-editor::shadow {
+    .vim-mode-plus-flash .region {
+      background-color: fadeout(@background-color-info, 50%);
+    }
   }
 }
