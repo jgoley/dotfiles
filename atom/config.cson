@@ -19,15 +19,10 @@
           alpha: 0
       pulseDuration: 200
   "bracket-matcher":
+    autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
     disabledPackages: [
-      "minimap"
-      "minimap-cursorline"
-      "minimap-highlight-selected"
-      "minimap-selection"
-      "vim-mode"
-      "vim-surround"
       "alignment"
       "linter"
     ]
@@ -49,7 +44,7 @@
     ]
   date: {}
   editor:
-    fontSize: 12
+    fontSize: 15
     invisibles:
       eol: "↴"
       space: "•"

@@ -4,12 +4,13 @@
 alias rf='rm -rf'
 
 # Directory
-alias dots='$dotfiles_folder'
+alias code='~/code'
+alias dots='$DOTFILES_FOLDER'
 
 # Editors
 alias sa='subl3 .'
 alias atm='atom'
-alias aa='atom .'
+alias aa='atm .'
 
 # Git
 alias gaa='git add .'
@@ -20,7 +21,7 @@ alias gpf='git push -f'
 alias gcan='git commit -v -a --no-edit --amend'
 alias gcanp='git commit -v -a --no-edit --amend && gpf'
 gri () {
-  echo "rebase -i HEAD~$1"
+  echo "git rebase -i HEAD~$1"
 }
 
 # Npm and Bower
@@ -38,6 +39,6 @@ alias mtrnpm='meteor npm install --save'
 alias mtrcp='meteor create --package'
 
 # Misc
-alias god='sh $dotfiles_folder/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal
-alias gol='sh $dotfiles_folder/util/go_light.sh'    # Sets light theme on OSX, Atom and terminal
+alias god='sh $DOTFILES_FOLDER/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal
+alias gol='sh $DOTFILES_FOLDER/util/go_light.sh'    # Sets light theme on OSX, Atom and terminal
 alias zr='exec zsh'                                 # Resets oh-my-zsh

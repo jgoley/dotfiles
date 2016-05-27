@@ -1,40 +1,40 @@
 . variables.sh
 
-dotfiles="git phoenix zsh atom Karabiner"
+DOTFILES="git phoenix zsh atom Karabiner"
 
 link_files () {
-  cd $dotfiles_folder
-  for file in `ls $FOLDER`
+  cd $DOTFILES_FOLDER
+  for FILE in `ls $FOLDER`
     do
-      current_dir=`pwd`
-      path_file=$current_dir/$FOLDER/$file
-      file_linked_name=$dot$file
-      path_file_linked=$destination$file_linked_name
-      if [ ! "$path_file_linked" ]
+      CURRENT_DIR=`pwd`
+      PATH_FILE=$CURRENT_DIR/$FOLDER/$FILE
+      FILE_LINKED_NAME=$DOT$FILE
+      PATH_FILE_linked=$DESTINATION$FILE_LINKED_NAME
+      if [ ! "$PATH_FILE_linked" ]
       then
-        ln -s $path_file $path_file_linked
-        echo $GREEN $CHECK $path_file_linked" linked" $WHITE
+        ln -s $PATH_FILE $PATH_FILE_linked
+        echo $GREEN $CHECK $PATH_FILE_linked" linked" $WHITE
       else
-        echo $GREEN $REDO $path_file_linked" already exists, re-linked" $WHITE
-        rm "$destination$dot$file"
-        ln -s $path_file "$path_file_linked"
+        echo $GREEN $REDO $PATH_FILE_linked" already exists, re-linked" $WHITE
+        rm "$DESTINATION$DOT$FILE"
+        ln -s $PATH_FILE "$PATH_FILE_linked"
       fi
     done
 }
 
-for FOLDER in $dotfiles
+for FOLDER in $DOTFILES
   do
-    destination=$HOME"/"
-    dot="."
+    DESTINATION=$HOME"/"
+    DOT="."
     echo $BOLD"Linking "$FOLDER" files"$NORM
     case "$FOLDER" in
       "atom")
-        destination=$HOME/.atom/
-        dot=""
+        DESTINATION=$HOME/.atom/
+        DOT=""
       ;;
       "Karabiner")
-        destination=$HOME/Library/Application\ Support/Karabiner/
-        dot=""
+        DESTINATION=$HOME/Library/Application\ Support/Karabiner/
+        DOT=""
       ;;
     esac
     link_files

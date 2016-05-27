@@ -1,4 +1,4 @@
-dotfiles_folder=~/code/dotfiles
+DOTFILES_FOLDER=~/code/dotfiles
 
 BOLD=$(tput bold)
 NORM=$(tput sgr0)
