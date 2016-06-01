@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <root>
+
   <appdef>
     <appname>ATOM</appname>
     <equal>com.github.atom</equal>
@@ -9,6 +10,12 @@
     <appname>CHROME</appname>
     <equal>com.google.Chrome</equal>
   </appdef>
+
+  <appdef>
+    <appname>TERMINAL</appname>
+    <equal>com.apple.Terminal</equal>
+  </appdef>
+
 </root>
 
 <root>
@@ -79,7 +86,7 @@
     <item>
       <name>Remap cmd-c to ctrl-c</name>
       <identifier>jgo.copy</identifier>
-      <not>ATOM</not>
+      <not>ATOM, TERMINAL</not>
       <autogen>
         __KeyToKey__
         KeyCode::C, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
