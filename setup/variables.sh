@@ -1,4 +1,5 @@
-DOTFILES_FOLDER=~/code/dotfiles
+DOTFILES_DIR=~/code/dotfiles
+KARABINER_DIR=/Applications/Karabiner.app/Contents/Library/bin/karabiner
 
 BOLD=$(tput bold)
 NORM=$(tput sgr0)

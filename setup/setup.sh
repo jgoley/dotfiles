@@ -4,10 +4,10 @@
 
 . install_zsh.sh
 
-. $DOTFILES_FOLDER/homebrew/install_homebrew.sh
+. $DOTFILES_DIR/homebrew/install_homebrew.sh
 
 . link_dotfiles.sh
 
-. $DOTFILES_FOLDER/OSX/set-defaults.sh
+. $DOTFILES_DIR/OSX/set-defaults.sh
 
-sh $DOTFILES_FOLDER/Karabiner/karabiner-import.sh
+sh $DOTFILES_DIR/Karabiner/karabiner-import.sh
