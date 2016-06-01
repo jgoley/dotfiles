@@ -7,6 +7,7 @@ brew 'meteor'
 brew 'youtube-dl'
 brew 'awscli'
 brew 'dark-mode'
+brew 'colordiff'
 
 cask '1password'
 cask 'atom'

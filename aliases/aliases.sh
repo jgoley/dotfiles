@@ -2,10 +2,11 @@
 
 # Bash
 alias rf='rm -rf'
+alias c='clear'
 
 # Directory
 alias code='~/code'
-alias dots='$DOTFILES_FOLDER'
+alias dots='$DOTFILES_DIR'
 
 # Editors
 alias sa='subl3 .'
@@ -21,7 +22,7 @@ alias gpf='git push -f'
 alias gcan='git commit -v -a --no-edit --amend'
 alias gcanp='git commit -v -a --no-edit --amend && gpf'
 gri () {
-  echo "git rebase -i HEAD~$1"
+  git rebase -i HEAD~$1
 }
 
 # Npm and Bower
@@ -39,6 +40,16 @@ alias mtrnpm='meteor npm install --save'
 alias mtrcp='meteor create --package'
 
 # Misc
-alias god='sh $DOTFILES_FOLDER/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal
-alias gol='sh $DOTFILES_FOLDER/util/go_light.sh'    # Sets light theme on OSX, Atom and terminal
+alias god='sh $DOTFILES_DIR/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal
+alias gol='sh $DOTFILES_DIR/util/go_light.sh'    # Sets light theme on OSX, Atom and terminal
 alias zr='exec zsh'                                 # Resets oh-my-zsh
+
+karabiner(){
+  case "$1" in
+    "list")
+      $KARABINER_DIR list
+    ;;
+    "export")
+      $KARABINER_DIR export > $DOTFILES_DIR/karabiner/karabiner-import.sh
+  esac
+}

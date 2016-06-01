@@ -44,7 +44,7 @@
     ]
   date: {}
   editor:
-    fontSize: 15
+    fontSize: 22
     invisibles:
       eol: "↴"
       space: "•"
@@ -92,8 +92,7 @@
     projectRootDirectories: [
       "/Users/jgoley/code/"
     ]
-  "relative-numbers":
-    startAtOne: true
+  "relative-numbers": {}
   "split-diff":
     ignoreWhitespace: true
     leftEditorColor: "red"
@@ -112,6 +111,9 @@
   "vim-mode-clipboard-plus":
     useVimModePlus: true
   "vim-mode-plus":
+    charactersToAddSpaceOnSurround: [
+      "{"
+    ]
     clearHighlightSearchOnResetNormalMode: true
     flashOnOperateDuration: 200
     flashOnUndoRedoDuration: 200

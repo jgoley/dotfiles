@@ -3,7 +3,7 @@
 DOTFILES="git phoenix zsh atom Karabiner"
 
 link_files () {
-  cd $DOTFILES_FOLDER
+  cd $DOTFILES_DIR
   for FILE in `ls $FOLDER`
     do
       CURRENT_DIR=`pwd`
