@@ -6,7 +6,7 @@ alias c='clear'
 
 # Directory
 alias code='~/code'
-alias dots='$DOTFILES_DIR'
+alias dots='$DOTFILES_DIR && aa'
 
 # Editors
 alias sa='subl3 .'

@@ -7,9 +7,9 @@
 'atom-text-editor':
   'ctrl-j' : 'core:move-down'
   'ctrl-k' : 'core:move-up'
-
 'body':
   'ctrl-p'           : 'unset!'
+  'ctrl-alt-cmd-r'   : 'window:reload'
   'ctrl-s'           : 'jgo:normal-mode-on-save'
   'ctrl-]'           : 'pane:show-next-item'
   'ctrl-['           : 'pane:show-previous-item'
@@ -32,8 +32,6 @@
   's'       : 'vim-mode-plus:surround'
   's w'     : 'vim-mode-plus:surround-word'
   'm s'     : 'vim-mode-plus:map-surround'
-  'D s'     : 'vim-mode-plus:delete-surround'
-  'C s'     : 'vim-mode-plus:change-surround'
   'd s'     : 'vim-mode-plus:delete-surround-any-pair'
   'c s'     : 'vim-mode-plus:change-surround-any-pair'
   'ctrl-k'  : 'jgo:insert-newline-above-stay-normal'

@@ -31,6 +31,7 @@ packages: [
   "linter-jade"
   "linter-stylint"
   "merge-conflicts"
+  "autocomplete-meteor-packages"
   "monokai-slate"
   "package-sync"
   "pigments"

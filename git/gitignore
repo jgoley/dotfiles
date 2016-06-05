@@ -12,3 +12,8 @@ Thumbs.db
 ######################
 coffeelint.json
 .stylintrc
+
+# NPM related
+######################
+node_modules
+npm-debug.log*
