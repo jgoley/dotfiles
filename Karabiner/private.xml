@@ -104,6 +104,7 @@
         KeyCode::V, ModifierFlag::COMMAND_L
       </autogen>
     </item>
+
   </item>
 
   <item>
@@ -204,7 +205,6 @@
   </item>
 
   <item>
-
     <name>Switchers</name>
     <item>
       <name>Switch Right tab select</name>
@@ -245,6 +245,19 @@
         KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L
       </autogen>
     </item>
+  </item>
 
+  <item>
+    <name>Atom Remaps</name>
+    <only>ATOM</only>
+    <item>
+      <name>Remap ctrl-0 to ctrl-enter</name>
+      <identifier>jgo.atom.tree-view-focus</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::RETURN, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::0, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
   </item>
 </root>

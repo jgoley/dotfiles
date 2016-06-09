@@ -12,6 +12,8 @@ $cli set jgo.right_tab 1
 /bin/echo -n .
 $cli set jgo.left_TO_H 1
 /bin/echo -n .
+$cli set jgo.atom.tree-view-focus 1
+/bin/echo -n .
 $cli set global.leftToH 1
 /bin/echo -n .
 $cli set jgo.control_TO_caps 1
@@ -27,6 +29,8 @@ $cli set repeat.wait 33
 $cli set jgo.app_switcher 1
 /bin/echo -n .
 $cli set jgo.control_to_caps 1
+/bin/echo -n .
+$cli set jgo.atom.change-till-beginning-of-line 1
 /bin/echo -n .
 $cli set jgo.left_TO_K 1
 /bin/echo -n .
