@@ -25,7 +25,6 @@
   core:
     disabledPackages: [
       "alignment"
-      "linter"
     ]
     ignoredNames: [
       ".git"
@@ -84,6 +83,7 @@
     ]
   "relative-numbers": {}
   "split-diff":
+    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
@@ -120,6 +120,9 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+".css.source.stylus":
+  editor:
+    autoIndentOnPaste: false
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true

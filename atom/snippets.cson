@@ -17,7 +17,7 @@
 
   'Meteor: Template onCreated':
     'prefix': 'created'
-    'body': 'Template.${1:name}.oncreated ->\n  ${2:}'
+    'body': 'Template.${1:name}.onCreated ->\n  ${2:}'
 
   'Meteor: Template onRendered':
     'prefix': 'rendered'

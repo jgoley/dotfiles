@@ -24,6 +24,7 @@ packages: [
   "highlight-selected"
   "jade-bootstrap3-snippets"
   "javascript-snippets"
+  "js2coffee"
   "language-applescript"
   "line-diff-details"
   "linter"
