@@ -3,7 +3,6 @@
     importTypes:
       es6: false
     projectDependencies: {}
-  "autocomplete-meteor-packages": {}
   "block-cursor":
     global:
       blinkOff: {}
@@ -23,9 +22,6 @@
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
-    disabledPackages: [
-      "alignment"
-    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -65,6 +61,17 @@
   linter:
     gutterPosition: "Left"
     lintOnFly: false
+  minimap:
+    displayCodeHighlights: false
+    ignoreWhitespacesInTokens: true
+    independentMinimapScroll: true
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
   "one-dark-ui":
     fontSize: 12
   "one-light-ui":
@@ -77,10 +84,7 @@
     forceOverwrite: true
   pigments:
     markerType: "dot"
-  "project-folder":
-    projectRootDirectories: [
-      "/Users/jgoley/code/"
-    ]
+  "project-folder": {}
   "relative-numbers": {}
   "split-diff":
     diffWords: true
@@ -120,9 +124,6 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-".css.source.stylus":
-  editor:
-    autoIndentOnPaste: false
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
