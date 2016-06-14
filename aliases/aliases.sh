@@ -16,6 +16,7 @@ alias aa='atm .'
 # Git
 alias gaa='git add .'
 alias gbd='git branch -D'
+alias gbdm='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
 alias gcam='git commit -a -m '
 alias gcm='git commit -m '
 alias gpf='git push -f'
