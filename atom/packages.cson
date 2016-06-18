@@ -20,7 +20,7 @@ packages: [
   "language-applescript"
   "language-javascript-jsx"
   "linter"
-  "linter-coffeelint"
+  "linter-coffeescript"
   "linter-jade"
   "linter-stylint"
   "merge-conflicts"
