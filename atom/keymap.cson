@@ -8,6 +8,9 @@
   'ctrl-j' : 'core:move-down'
   'ctrl-k' : 'core:move-up'
 
+'.platform-darwin':
+  'ctrl-enter': 'tree-view:toggle-focus'
+
 'body':
   'ctrl-p'           : 'unset!'
   'ctrl-alt-cmd-r'   : 'window:reload'
