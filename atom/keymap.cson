@@ -49,7 +49,10 @@
   's': 'vim-mode-plus:surround'
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
-  ':': 'ex-mode:open'
+  'ctrl-x'  : 'unset!'
+  ':'      : 'ex-mode:open'
+  'ctrl-=' : 'vim-mode-plus:increase'
+  'ctrl--' : 'vim-mode-plus:decrease'
 
 'atom-text-editor.vim-mode-plus-input-char-waiting':
   's': 'unset!'

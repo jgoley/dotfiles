@@ -3,6 +3,7 @@
     importTypes:
       es6: false
     projectDependencies: {}
+  "autocomplete-meteor-packages": {}
   "block-cursor":
     global:
       blinkOff: {}
@@ -22,6 +23,9 @@
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
+    disabledPackages: [
+      "linter"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -40,7 +44,7 @@
     ]
   date: {}
   editor:
-    fontSize: 22
+    fontSize: 13
     invisibles:
       eol: "↴"
       space: "•"

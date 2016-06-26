@@ -26,6 +26,10 @@ gri () {
   git rebase -i HEAD~$1
 }
 
+greset () {
+  git reset HEAD~$1
+}
+
 # Npm and Bower
 alias npms='npm install --save '
 alias bowi='bower install'

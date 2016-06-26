@@ -105,6 +105,27 @@
       </autogen>
     </item>
 
+    <item>
+      <name>Remap cmd-t to ctrl-t</name>
+      <identifier>jgo.new-tab</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::T, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::T, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+
+    <item>
+      <name>Remap cmd-n to ctrl-n</name>
+      <identifier>jgo.new-window</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::N, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::N, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
   </item>
 
   <item>
