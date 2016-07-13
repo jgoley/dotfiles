@@ -7,9 +7,14 @@
 'atom-text-editor':
   'ctrl-j' : 'core:move-down'
   'ctrl-k' : 'core:move-up'
+  'ctrl-z' : 'core:undo'
 
 '.platform-darwin':
   'ctrl-enter': 'tree-view:toggle-focus'
+
+'atom-text-editor[mini]':
+  'ctrl-h': 'core:move-left'
+  'ctrl-l': 'core:move-right'
 
 'body':
   'ctrl-p'           : 'unset!'

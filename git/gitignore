@@ -17,3 +17,7 @@ coffeelint.json
 ######################
 node_modules
 npm-debug.log*
+
+# ETC
+######################
+/.meteor/dev_bundle

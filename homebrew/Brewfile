@@ -8,6 +8,7 @@ brew 'youtube-dl'
 brew 'awscli'
 brew 'dark-mode'
 brew 'colordiff'
+brew 'scp'
 
 cask '1password'
 cask 'atom'

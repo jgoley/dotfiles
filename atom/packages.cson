@@ -9,6 +9,7 @@ packages: [
   "autocomplete-modules"
   "block-cursor"
   "clipboard-plus"
+  "cucumber"
   "danikai-light-syntax"
   "date"
   "emmet"
