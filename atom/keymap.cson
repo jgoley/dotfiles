@@ -34,7 +34,8 @@
   'D' : 'tree-view:remove'
   'r' : 'tree-view:rename'
   'x' : 'tree-view:cut'
-  'p' : 'tree-view:paste'
+  'v' : 'tree-view:paste'
+  'c' : 'tree-view:copy'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   'ctrl-]'  : 'unset!'

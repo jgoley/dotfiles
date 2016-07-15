@@ -20,4 +20,7 @@ npm-debug.log*
 
 # ETC
 ######################
-/.meteor/dev_bundle
+/**/.meteor/dev_bundle
+settings-local.json
+settings-dev.json
+settings-prod.json
