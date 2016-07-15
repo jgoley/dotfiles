@@ -6,6 +6,7 @@
 @highlight:        hsla(35, 85%, 71%, 1.00);
 @selection:        @selected;
 @vim-hover:        HSLA(139, 35%, 57%, 1.00);
+@visual-highlight: #66D9EF;
 
 @app-background-color: @pane-BG;
 
@@ -116,7 +117,7 @@ pigments-color-marker.dot {
 
   atom-text-editor.vim-mode-plus.visual-mode.is-focused::shadow .cursor,
   atom-text-editor.vim-mode-plus.visual-mode.is-focused .cursor {
-    background-color: @selection;
+    background-color: @visual-highlight;
     opacity: .75;
   }
 
