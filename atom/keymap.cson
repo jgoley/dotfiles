@@ -11,6 +11,7 @@
 
 '.platform-darwin':
   'ctrl-enter': 'tree-view:toggle-focus'
+  'ctrl-\\': 'tree-view:toggle'
 
 'atom-text-editor[mini]':
   'ctrl-h': 'core:move-left'

@@ -256,16 +256,6 @@
         KeyCode::TAB, ModifierFlag::COMMAND_L
       </autogen>
     </item>
-
-    <item>
-      <name>Switch cmd-~ ctrl-shift-space</name>
-      <identifier>jgo.app_switcher_reverse</identifier>
-      <autogen>
-        __KeyToKey__
-        KeyCode::BACKSLASH, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-        KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L
-      </autogen>
-    </item>
   </item>
 
   <item>
