@@ -27,7 +27,7 @@ showModal = (message, duration) ->
 changeGridWidth = (amount) ->
   GRID_WIDTH = Math.max(1, GRID_WIDTH + amount)
   Phoenix.notify "Grid is now #{GRID_WIDTH} tiles wide"
-  _.each Window.visibleWindows(), (win) ->
+  _.each Window.all(visible: true), (win) ->
     win.snapToGrid()
 
 Window::getGrid = ->
@@ -52,7 +52,7 @@ Window::setGrid = (grid, screen) ->
     height: grid.h * halfScreenHeight
   newFrame.x += MARGIN_X
   newFrame.y += MARGIN_Y
-  newFrame.width -= MARGIN_X * 2.0
+  newFrame.width  -= MARGIN_X * 2.0
   newFrame.height -= MARGIN_Y * 2.0
   @setFrame newFrame
 
@@ -61,56 +61,57 @@ Window::snapToGrid = ->
     @setGrid @getGrid(), @screen()
 
 # Snap focused window to grid
-keys.push Phoenix.bind ';', hyper, ->
-  Window.focusedWindow().snapToGrid()
+keys.push new Key ';', hyper, ->
+  Window.focused().snapToGrid()
 
 # Snap all windows to grid
-keys.push Phoenix.bind '\'', hyper, ->
-  _.each Window.visibleWindows(), (win) ->
+keys.push new Key '\'', hyper, ->
+  _.each Window.all(visible: true), (win) ->
     win.snapToGrid()
 
 # Increase columns in grid
-keys.push Phoenix.bind '=', hyper, ->
+keys.push new Key '=', hyper, ->
   changeGridWidth(+1)
 
 # Decrease columns in grid
-keys.push Phoenix.bind '-', hyper, ->
+keys.push new Key '-', hyper, ->
   changeGridWidth(-1)
 
 # Focus closet window to left
-keys.push Phoenix.bind 'left', hyper, ->
-  Window.focusedWindow().focusClosestWindowInWest()
+keys.push new Key 'left', hyper, ->
+  Window.focused().focusClosestNeighbour 'west'
 
 # Focus closet window to right
-keys.push Phoenix.bind 'right', hyper, ->
-  Window.focusedWindow().focusClosestWindowInEast()
+keys.push new Key 'right', hyper, ->
+  Window.focused().focusClosestNeighbour 'east'
 
 # Focus closet window above
-keys.push Phoenix.bind 'up', hyper, ->
-  Window.focusedWindow().focusClosestWindowInNorth()
+keys.push new Key 'up', hyper, ->
+  Window.focused().focusClosestNeighbour 'north'
 
 # Focus closet window below
-keys.push Phoenix.bind 'down', hyper, ->
-  Window.focusedWindow().focusClosestWindowInSouth()
+keys.push new Key 'down', hyper, ->
+  Window.focused().focusClosestNeighbour 'south'
 
-keys.push Phoenix.bind 'P', hyper, ->
-  win = Window.focusedWindow()
+# Move to secondary screen
+keys.push new Key 'P', hyper, ->
+  win = Window.focused()
   win.setGrid win.getGrid(), win.screen().previous()
 
 # Fill window to screen
-keys.push Phoenix.bind 'M', hyper, ->
-  win = Window.focusedWindow().maximize()
+keys.push new Key 'M', hyper, ->
+  win = Window.focused().maximize()
 
 # Move window to left
-keys.push Phoenix.bind 'H', hyper, ->
-  win = Window.focusedWindow()
+keys.push new Key 'H', hyper, ->
+  win = Window.focused()
   f = win.getGrid()
   f.x = Math.max(f.x - 1, 0)
   win.setGrid f, win.screen()
 
 # Move window to right
-keys.push Phoenix.bind 'L', hyper, ->
-  win = Window.focusedWindow()
+keys.push new Key 'L', hyper, ->
+  win = Window.focused()
   f = win.getGrid()
   f.x = Math.min(f.x + 1, GRID_WIDTH - f.w)
   win.setGrid f, win.screen()
@@ -118,8 +119,8 @@ keys.push Phoenix.bind 'L', hyper, ->
 # Expand window to right.
 # If window is against the right side of screen and not full screen,
 # window will expand to left
-keys.push Phoenix.bind 'O', hyper, ->
-  win = Window.focusedWindow()
+keys.push new Key 'O', hyper, ->
+  win = Window.focused()
   f = win.getGrid()
   if f.w == GRID_WIDTH - f.x and f.x isnt 0
     ++f.w
@@ -129,31 +130,31 @@ keys.push Phoenix.bind 'O', hyper, ->
   win.setGrid f, win.screen()
 
 # Compress window to left
-keys.push Phoenix.bind 'I', hyper, ->
-  win = Window.focusedWindow()
+keys.push new Key 'I', hyper, ->
+  win = Window.focused()
   f = win.getGrid()
   f.w = Math.max(f.w - 1, 1)
   win.setGrid f, win.screen()
 
 # Move to lower half of screen
-keys.push Phoenix.bind 'J', hyper, ->
-  win = Window.focusedWindow()
+keys.push new Key 'J', hyper, ->
+  win = Window.focused()
   f = win.getGrid()
   f.y = 1
   f.h = 1
   win.setGrid f, win.screen()
 
 # Move to upper half
-keys.push Phoenix.bind 'K', hyper, ->
-  win = Window.focusedWindow()
+keys.push new Key 'K', hyper, ->
+  win = Window.focused()
   f = win.getGrid()
   f.y = 0
   f.h = 1
   win.setGrid f, win.screen()
 
 # Expand to screen height
-keys.push Phoenix.bind 'U', hyper, ->
-  win = Window.focusedWindow()
+keys.push new Key 'U', hyper, ->
+  win = Window.focused()
   f = win.getGrid()
   f.y = 0
   f.h = 2
@@ -163,5 +164,5 @@ keys.push Phoenix.bind 'U', hyper, ->
  App related Key Bindings
 ###
 
-keys.push Phoenix.bind 'C', appMash, ->
+keys.push new Key 'C', appMash, ->
   App.launch('Google Chrome').focus()
