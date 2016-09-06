@@ -3,7 +3,8 @@
     importTypes:
       es6: false
     projectDependencies: {}
-  "autocomplete-meteor-packages": {}
+  "autocomplete-meteor-packages":
+    meteorDirLocation: "search"
   "block-cursor":
     global:
       blinkOff: {}
@@ -44,7 +45,7 @@
     ]
   date: {}
   editor:
-    fontSize: 13
+    fontSize: 11
     invisibles:
       eol: "↴"
       space: "•"

@@ -10,7 +10,7 @@ dispatch = (command) ->
   commands.dispatch editorElement, command
 
 resetVimNormal = ->
-  commands.dispatch editorElement, "#{vim}:reset-normal-mode"
+  dispatch "#{vim}:reset-normal-mode"
 
 themeIsActive = (mode) ->
   mode in atom.themes.getActiveThemeNames()
