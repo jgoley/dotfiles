@@ -1,5 +1,4 @@
 vim = 'vim-mode-plus'
-editorElement = atom.views.getView atom.workspace.getActiveTextEditor()
 commands = atom.commands
 vimEditor = "atom-text-editor.#{vim}"
 
@@ -7,6 +6,8 @@ darkTheme = "monokai-slate"
 lightTheme = "one-light-syntax"
 
 dispatch = (command) ->
+  editorElement = atom.views.getView atom.workspace.getActiveTextEditor()
+  return unless editorElement
   commands.dispatch editorElement, command
 
 resetVimNormal = ->

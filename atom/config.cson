@@ -45,7 +45,7 @@
     ]
   date: {}
   editor:
-    fontSize: 11
+    fontSize: 8
     invisibles:
       eol: "↴"
       space: "•"
