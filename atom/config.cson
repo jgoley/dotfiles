@@ -24,9 +24,6 @@
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
-    disabledPackages: [
-      "linter"
-    ]
     ignoredNames: [
       ".git"
       ".hg"

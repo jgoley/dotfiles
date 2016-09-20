@@ -10,6 +10,7 @@
   'ctrl-z' : 'core:undo'
 
 '.platform-darwin':
+  'ctrl-enter': 'unset!'
   'ctrl-enter': 'tree-view:toggle-focus'
   'ctrl-\\': 'tree-view:toggle'
 
@@ -50,7 +51,9 @@
   'c s'     : 'vim-mode-plus:change-surround-any-pair'
   'ctrl-k'  : 'jgo:insert-newline-above-stay-normal'
   'ctrl-j'  : 'jgo:insert-newline-below-stay-normal'
-  ')'       : 'vim-mode-plus:move-to-first-character-of-line'
+  ')'       : 'jgo:insert-before-first-character-of-line'
+  '0'       : 'vim-mode-plus:move-to-first-character-of-line'
+  'ctrl-0'  : 'vim-mode-plus:move-to-beginning-of-line'
 
 'atom-text-editor.vim-mode-plus.visual-mode':
   's': 'vim-mode-plus:surround'

@@ -13,6 +13,9 @@ dispatch = (command) ->
 resetVimNormal = ->
   dispatch "#{vim}:reset-normal-mode"
 
+vimInsertMode  = ->
+  dispatch "#{vim}:activate-insert-mode"
+
 themeIsActive = (mode) ->
   mode in atom.themes.getActiveThemeNames()
 
@@ -31,6 +34,10 @@ commands.add vimEditor, 'jgo:insert-newline-above-stay-normal', ->
 commands.add vimEditor, "jgo:insert-newline-below-stay-normal", ->
   dispatch "#{vim}:insert-below-with-newline"
   resetVimNormal()
+
+commands.add vimEditor, "jgo:insert-before-first-character-of-line", ->
+  dispatch "#{vim}:move-to-first-character-of-line"
+  vimInsertMode()
 
 commands.add 'atom-text-editor', 'jgo:go-light', ->
   unless themeIsActive(lightTheme)

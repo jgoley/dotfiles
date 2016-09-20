@@ -258,17 +258,4 @@
     </item>
   </item>
 
-  <item>
-    <name>Atom Remaps</name>
-    <only>ATOM</only>
-    <item>
-      <name>Remap ctrl-0 to ctrl-enter</name>
-      <identifier>jgo.atom.tree-view-focus</identifier>
-      <autogen>
-        __KeyToKey__
-        KeyCode::RETURN, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-        KeyCode::0, ModifierFlag::CONTROL_L
-      </autogen>
-    </item>
-  </item>
 </root>
