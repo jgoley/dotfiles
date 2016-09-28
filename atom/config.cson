@@ -24,6 +24,10 @@
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
+    disabledPackages: [
+      "linter-stylint"
+      "linter-jade"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -42,7 +46,7 @@
     ]
   date: {}
   editor:
-    fontSize: 8
+    fontSize: 12
     invisibles:
       eol: "↴"
       space: "•"
