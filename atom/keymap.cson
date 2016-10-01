@@ -1,25 +1,29 @@
 # Type "key" and then hitting tab.
 #
-# Keybinding Resolver: `Cmd+.` on OS X and `Ctrl+.` on other platforms. See the
-# Debugging Guide for more information:
 # https://atom.io/docs/latest/hacking-atom-debugging#check-the-keybindings
 
 'atom-text-editor':
-  'ctrl-j' : 'core:move-down'
-  'ctrl-k' : 'core:move-up'
-  'ctrl-z' : 'core:undo'
+  'cmd-ctrl-d'   : '!unset'
+  'ctrl-j'       : 'core:move-down'
+  'ctrl-k'       : 'core:move-up'
+  'ctrl-z'       : 'core:undo'
+  'cmd-shift-F' : 'project-find:show'
+  'cmd-shift-D' : 'project-find:show-in-current-directory'
 
 '.platform-darwin':
   'ctrl-enter': 'unset!'
   'ctrl-enter': 'tree-view:toggle-focus'
   'ctrl-\\': 'tree-view:toggle'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+
+'.platform-darwin, .platform-darwin .command-palette atom-text-editor':
+  'cmd-ctrl-p': 'command-palette:toggle'
 
 'atom-text-editor[mini]':
   'ctrl-h': 'core:move-left'
   'ctrl-l': 'core:move-right'
 
 'body':
-  'ctrl-p'           : 'unset!'
   'ctrl-alt-cmd-r'   : 'window:reload'
   'ctrl-s'           : 'jgo:normal-mode-on-save'
   'ctrl-]'           : 'pane:show-next-item'
@@ -31,6 +35,10 @@
   'ctrl-/'           : 'editor:toggle-line-comments'
   'ctrl-cmd-shift-l' : 'jgo:go-light'
   'ctrl-cmd-shift-d' : 'jgo:go-dark'
+  'ctrl-k'           : 'core:move-up'
+  'ctrl-j'           : 'core:move-down'
+  'ctrl-h'           : 'core:move-left'
+  'ctrl-l'           : 'core:move-right'
 
 '.tree-view':
   'D' : 'tree-view:remove'
@@ -38,6 +46,9 @@
   'x' : 'tree-view:cut'
   'v' : 'tree-view:paste'
   'c' : 'tree-view:copy'
+
+'.platform-darwin atom-text-editor.vim-mode-plus':
+  'ctrl-shift-P': 'clipboard-plus:toggle'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   'ctrl-]'  : 'unset!'
@@ -69,6 +80,3 @@
 
 'atom-text-editor.vim-mode-plus.visual-mode':
   's': 'unset!'
-
-'.platform-darwin atom-text-editor.vim-mode-plus':
-  'ctrl-p': 'clipboard-plus:toggle'
