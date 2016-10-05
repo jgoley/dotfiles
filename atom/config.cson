@@ -46,7 +46,6 @@
     invisibles:
       eol: "↴"
       space: "•"
-    lineHeight: 1.7
     scrollPastEnd: false
     showIndentGuide: true
     showInvisibles: true
