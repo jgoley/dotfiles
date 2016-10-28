@@ -9,21 +9,17 @@
     global:
       blinkOff: {}
       blinkOn:
-        backgroundColor:
-          red: 178
-          green: 214
-          blue: 149
-          alpha: 0.75
-        borderColor:
-          red: 218
-          green: 170
-          blue: 124
-          alpha: 0
+        backgroundColor: "rgba(178, 214, 149, 0.75)"
+        borderColor: "rgba(218, 170, 124, 0)"
       pulseDuration: 200
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
+    disabledPackages: [
+      "linter-stylint"
+      "linter-coffeelint"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -36,6 +32,7 @@
     ]
     packagesWithKeymapsDisabled: []
     projectHome: "~/code/"
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "monokai-slate"
