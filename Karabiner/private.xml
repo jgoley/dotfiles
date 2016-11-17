@@ -256,24 +256,26 @@
         KeyCode::TAB, ModifierFlag::COMMAND_L
       </autogen>
     </item>
+
     <item>
       <name>Switch alt-down to shift-ctrl-j</name>
       <identifier>jgo.page_down</identifier>
       <autogen>
         __KeyToKey__
-        KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, ModifierFlag::NONE,
+        KeyCode::J, ModifierFlag::SHIFT_R | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
         KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L
       </autogen>
     </item>
+
     <item>
       <name>Switch alt-up to shift-ctrl-k</name>
       <identifier>jgo.page_up</identifier>
       <autogen>
         __KeyToKey__
-        KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, ModifierFlag::NONE,
+        KeyCode::K, ModifierFlag::SHIFT_R | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
         KeyCode::CURSOR_UP, ModifierFlag::OPTION_L
       </autogen>
     </item>
-  </item>
 
+  </item>
 </root>
