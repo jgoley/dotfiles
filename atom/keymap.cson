@@ -11,7 +11,6 @@
   'cmd-shift-D' : 'project-find:show-in-current-directory'
 
 '.platform-darwin':
-  'ctrl-enter': 'unset!'
   'ctrl-enter': 'tree-view:toggle-focus'
   'ctrl-\\': 'tree-view:toggle'
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
@@ -53,7 +52,6 @@
 'atom-text-editor.vim-mode-plus.normal-mode':
   'ctrl-]'  : 'unset!'
   'ctrl-['  : 'unset!'
-  's'       : 'unset!'
   'shift-A' : 'vim-mode-plus:insert-after-end-of-line'
   's'       : 'vim-mode-plus:surround'
   's w'     : 'vim-mode-plus:surround-word'
@@ -63,7 +61,7 @@
   'ctrl-k'  : 'jgo:insert-newline-above-stay-normal'
   'ctrl-j'  : 'jgo:insert-newline-below-stay-normal'
   ')'       : 'jgo:insert-before-first-character-of-line'
-  '0'       : 'vim-mode-plus:move-to-first-character-of-line'
+  'shift-)' : 'vim-mode-plus:move-to-first-character-of-line'
   'ctrl-0'  : 'vim-mode-plus:move-to-beginning-of-line'
 
 'atom-text-editor.vim-mode-plus.visual-mode':
@@ -76,7 +74,4 @@
   'ctrl--' : 'vim-mode-plus:decrease'
 
 'atom-text-editor.vim-mode-plus-input-char-waiting':
-  's': 'unset!'
-
-'atom-text-editor.vim-mode-plus.visual-mode':
   's': 'unset!'

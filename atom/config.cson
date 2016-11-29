@@ -114,7 +114,6 @@
     setCursorToStartOfChangeOnUndoRedo: true
     showHoverOnOperate: true
     showHoverOnOperateIcon: "none"
-    stayOnYank: true
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
   "vim-surround": {}
