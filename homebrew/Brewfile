@@ -9,6 +9,7 @@ brew 'awscli'
 brew 'dark-mode'
 brew 'colordiff'
 brew 'scp'
+brew 'diff-so-fancy'
 
 cask '1password'
 cask 'atom'

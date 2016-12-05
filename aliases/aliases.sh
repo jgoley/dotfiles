@@ -22,6 +22,7 @@ alias gcm='git commit -m '
 alias gpf='git push -f'
 alias gcan='git commit -v -a --no-edit --amend'
 alias gcanp='git commit -v -a --no-edit --amend && gpf'
+alias gd='git diff --color'
 gri () {
   git rebase -i HEAD~$1
 }

@@ -1,7 +1,7 @@
 [core]
-      	excludesfile = ~/.gitignore
-      	editor       = atom -n -w
-        pager        = less -FRSX
+        excludesfile = ~/.gitignore
+        editor       = atom -n -w
+        pager = diff-so-fancy | less --tabs=4 -RFX
         ignorecase   = false
 [hub]
         protocol = https
@@ -30,6 +30,6 @@
 [format]
         pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [web]
-	      browser = google-chrome
+        browser = google-chrome
 [pull]
         rebase = true
