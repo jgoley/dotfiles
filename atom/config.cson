@@ -97,7 +97,7 @@
     position: "Left"
   "tree-view":
     focusOnReveal: false
-    hideVcsIgnoredFiles: true
+    hideIgnoredNames: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true

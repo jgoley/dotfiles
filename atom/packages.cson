@@ -10,6 +10,7 @@ packages: [
   "block-cursor"
   "clipboard-plus"
   "cucumber"
+  "cucumber-step"
   "ex-mode"
   "file-icons"
   "git-time-machine"
