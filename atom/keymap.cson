@@ -38,6 +38,10 @@
   'ctrl-j'           : 'core:move-down'
   'ctrl-h'           : 'core:move-left'
   'ctrl-l'           : 'core:move-right'
+  'right'            : '!unset'
+  'left'             : '!unset'
+  'down'             : '!unset'
+  'up'               : '!unset'
 
 '.tree-view':
   'D' : 'tree-view:remove'
@@ -72,6 +76,10 @@
   ':'      : 'ex-mode:open'
   'ctrl-=' : 'vim-mode-plus:increase'
   'ctrl--' : 'vim-mode-plus:decrease'
+  'right'            : '!unset'
+  'left'             : '!unset'
+  'down'             : '!unset'
+  'up'               : '!unset'
 
 'atom-text-editor.vim-mode-plus-input-char-waiting':
   's': 'unset!'

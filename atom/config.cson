@@ -85,7 +85,6 @@
   "project-folder": {}
   "relative-numbers": {}
   "split-diff":
-    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
