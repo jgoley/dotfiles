@@ -20,6 +20,7 @@ packages: [
   "javascript-snippets"
   "js2coffee"
   "language-applescript"
+  "language-docker"
   "language-javascript-jsx"
   "linter"
   "linter-coffeelint"
@@ -39,4 +40,5 @@ packages: [
   "tabs-to-spaces"
   "vim-mode-clipboard-plus"
   "vim-mode-plus"
+  "webdriverio-snippets"
 ]

@@ -26,9 +26,9 @@
       ".svn"
       ".DS_Store"
       "Thumbs.db"
-      ".meteor"
       "node_modules"
       "bower_components"
+      ".meteor/local"
     ]
     packagesWithKeymapsDisabled: []
     projectHome: "~/code/"
