@@ -7,13 +7,13 @@
   'ctrl-j'       : 'core:move-down'
   'ctrl-k'       : 'core:move-up'
   'ctrl-z'       : 'core:undo'
-  'cmd-shift-F' : 'project-find:show'
-  'cmd-shift-D' : 'project-find:show-in-current-directory'
+  'cmd-shift-F'  : 'project-find:show'
+  'cmd-shift-D'  : 'project-find:show-in-current-directory'
 
 '.platform-darwin':
   'ctrl-enter': 'tree-view:toggle-focus'
-  'ctrl-\\': 'tree-view:toggle'
-  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-\\'   : 'tree-view:toggle'
+  'ctrl-p'    : 'fuzzy-finder:toggle-file-finder'
 
 '.platform-darwin, .platform-darwin .command-palette atom-text-editor':
   'cmd-ctrl-p': 'command-palette:toggle'
@@ -44,6 +44,7 @@
   'up'               : '!unset'
 
 '.tree-view':
+
   'D' : 'tree-view:remove'
   'r' : 'tree-view:rename'
   'x' : 'tree-view:cut'

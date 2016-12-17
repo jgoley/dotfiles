@@ -32,6 +32,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export LANG=en_US.UTF-8
 export EDITOR='atom'
 export SSH_KEYS="~/.ssh/"
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
-# ALIASES
+
+ #ALIASES
 . ~/code/dotfiles/aliases/aliases.sh
