@@ -51,6 +51,9 @@ alias mtrcp='meteor create --package'
 alias god='sh $DOTFILES_DIR/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal
 alias gol='sh $DOTFILES_DIR/util/go_light.sh'    # Sets light theme on OSX, Atom and terminal
 alias zr='exec zsh'                                 # Resets oh-my-zsh
+rm () {
+  trash $1
+}
 
 karabiner(){
   case "$1" in
