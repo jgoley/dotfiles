@@ -18,6 +18,7 @@ alias gaa='git add .'
 alias gbd='git branch -D'
 alias gbdm='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
 alias gcom='git checkout master'
+alias gcomp='git checkout master && ggpull'
 alias gco-='git checkout -'
 alias gcam='git commit -a -m '
 alias gcm='git commit -m '
@@ -31,6 +32,10 @@ gri () {
 
 greset () {
   git reset HEAD~$1
+}
+
+gcbp () {
+  ggpull && gcb $1
 }
 
 # Npm and Bower
@@ -64,3 +69,5 @@ karabiner(){
       $KARABINER_DIR export > $DOTFILES_DIR/karabiner/karabiner-import.sh
   esac
 }
+
+alias ec='SPA_MONGO_URL=mongodb://localhost:27018/promed MONGO_URL=mongodb://localhost:27017/eidr-connect GRITS_API_KEY=Cr9LPAtL meteor --settings settings-dev.json'

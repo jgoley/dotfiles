@@ -26,10 +26,10 @@
       ".svn"
       ".DS_Store"
       "Thumbs.db"
-      ".meteor/local"
+      ".meteor"
       "bower_components"
-      "node_modules"
       ".site"
+      "node_modules"
     ]
     packagesWithKeymapsDisabled: []
     projectHome: "~/code/"
@@ -90,6 +90,7 @@
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
     syncHorizontalScroll: true
   "tabs-to-spaces":
     onSave: "untabify"
@@ -99,6 +100,7 @@
   "tree-view":
     focusOnReveal: false
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true

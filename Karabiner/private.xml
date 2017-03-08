@@ -130,98 +130,137 @@
 
   <item>
     <name>Directional Navigation</name>
+    <item>
+      <name>Move Left</name>
+      <identifier>jgo.keyboard_left</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::H, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_LEFT
+      </autogen>
+    </item>
 
     <item>
-      <name>Vim-like</name>
-      <item>
-        <name>Left</name>
-        <identifier>jgo.keyboard_left</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::H, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::CURSOR_LEFT
-        </autogen>
-      </item>
+      <name>Move Right</name>
+      <identifier>jgo.keyboard_right</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::L, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_RIGHT
+      </autogen>
+    </item>
 
-      <item>
-        <name>Right</name>
-        <identifier>jgo.keyboard_right</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::L, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::CURSOR_RIGHT
-        </autogen>
-      </item>
+    <item>
+      <name>Move Up</name>
+      <identifier>jgo.keyboard_up</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::K, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_UP
+      </autogen>
+    </item>
 
-      <item>
-        <name>Delete to end</name>
-        <identifier>jgo.delete_to_end</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::4, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::K, ModifierFlag::CONTROL_L
-        </autogen>
-      </item>
+    <item>
+      <name>Move Down</name>
+      <identifier>jgo.keyboard_down</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_DOWN
+      </autogen>
+    </item>
 
-      <item>
-        <name>Up</name>
-        <identifier>jgo.keyboard_up</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::K, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::CURSOR_UP
-        </autogen>
-      </item>
+    <item>
+      <name>Move to beginning of line</name>
+      <identifier>jgo.to_beginning</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::0, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::A, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
 
-      <item>
-        <name>Down</name>
-        <identifier>jgo.keyboard_down</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::J, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::CURSOR_DOWN
-        </autogen>
-      </item>
+    <item>
+      <name>Move to end of line</name>
+      <identifier>jgo.to_end_of_line</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::4, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::E, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
 
-      <item>
-        <name>Move to end</name>
-        <identifier>jgo.to_end</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::4, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::E, ModifierFlag::CONTROL_L
-        </autogen>
-      </item>
+    <item>
+      <name>Move to next word</name>
+      <identifier>jgo.next_word</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::W, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+    <item>
+      <name>Move to previous word</name>
+      <identifier>jgo.previous_word</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::W, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+  </item>
 
+  <item>
+    <name>Editing</name>
+    <item>
+      <name>Delete previous word</name>
+      <identifier>jgo.delete_previous_word</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::W, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_R, ModifierFlag::NONE,
+        KeyCode::DELETE, ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+    <item>
+      <name>Delete next word</name>
+      <identifier>jgo.delete_next_word</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::B, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_R, ModifierFlag::NONE,
+        KeyCode::DELETE, ModifierFlag::OPTION_L | ModifierFlag::FN | ModifierFlag::SHIFT_L
+      </autogen>
+    </item>
 
-      <item>
-        <name>Delete to beginning</name>
-        <identifier>jgo.delete_to_beginning</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::0, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::D, ModifierFlag::CONTROL_L
-        </autogen>
-      </item>
+    <item>
+      <name>Delete to beginning</name>
+      <identifier>jgo.delete_to_beginning</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::0, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::D, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
 
-      <item>
-        <name>move to beginning</name>
-        <identifier>jgo.to_beginning</identifier>
-        <not>ATOM</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::0, ModifierFlag::CONTROL_L, ModifierFlag::NONE,
-          KeyCode::A, ModifierFlag::CONTROL_L
-        </autogen>
-      </item>
-
+    <item>
+      <name>Delete to end</name>
+      <identifier>jgo.delete_to_end</identifier>
+      <not>ATOM</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::4, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::NONE,
+        KeyCode::K, ModifierFlag::CONTROL_L
+      </autogen>
     </item>
   </item>
 

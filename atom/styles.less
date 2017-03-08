@@ -7,6 +7,7 @@
 @selection:        @selected;
 @vim-hover:        HSLA(139, 35%, 57%, 1.00);
 @visual-highlight: #66D9EF;
+@theme-highlight: #BCD737;
 
 @app-background-color: @pane-BG;
 
@@ -16,13 +17,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-atom-text-editor::shadow div.lines div:last-child .line:last-child {
+atom-text-editor.editor div.lines div:last-child .line:last-child {
   .indent-guide {
     box-shadow: none;
   }
 }
 
-atom-text-editor::shadow pigments-markers::shadow pigments-color-marker.dot,
+atom-text-editor.editor pigments-markers::shadow pigments-color-marker.dot,
 pigments-markers::shadow pigments-color-marker.dot,
 pigments-color-marker.dot {
   transform: translate(100%, -50%) scale(.9);
@@ -109,13 +110,34 @@ pigments-color-marker.dot {
     display: none;
   }
 
-  atom-text-editor.vim-mode-plus.normal-mode.is-focused::shadow .cursor,
+  .cursors {
+    opacity: 1;
+    transition: opacity .15s;
+    &.blink-off {
+      opacity: 0;
+    }
+  }
+
+  atom-text-editor .editor-contents--private {
+    .cursor {
+      background-color: @theme-highlight;
+      opacity: .75;
+    }
+  }
+
+  atom-text-editor.vim-mode-plus.normal-mode.is-focused.editor .cursor,
   atom-text-editor.vim-mode-plus.normal-mode.is-focused .cursor{
     background-color: @highlight;
     opacity: .75;
   }
 
-  atom-text-editor.vim-mode-plus.visual-mode.is-focused::shadow .cursor,
+  atom-text-editor.vim-mode-plus.insert-mode.is-focused.editor .cursor,
+  atom-text-editor.vim-mode-plus.insert-mode.is-focused .cursor {
+    background-color: @vim-hover;
+    opacity: .75;
+  }
+
+  atom-text-editor.vim-mode-plus.visual-mode.is-focused.editor .cursor,
   atom-text-editor.vim-mode-plus.visual-mode.is-focused .cursor {
     background-color: @visual-highlight;
     opacity: .75;
@@ -130,35 +152,35 @@ pigments-color-marker.dot {
     border-radius: 1px;
   }
 
-  atom-text-editor::shadow .selection .region,
+  atom-text-editor.editor .selection .region,
   :host .selection .region {
     background-color: lighten(@selection, 10%);
     z-index: -1;
   }
 
-  atom-text-editor::shadow .highlight.find-result .region {
+  atom-text-editor.editor .highlight.find-result .region {
     background: @selection;
   }
 
   .atom-text-editor .line.highlight-line,
   :host .line.highlight-line,
   atom-text-editor .line.highlight-line,
-  atom-text-editor::shadow .line.highlight-line {
+  atom-text-editor.editor .line.highlight-line {
     background-color: fadeout(@selected, 20%) !important;
   }
 
-  atom-text-editor::shadow .gutter .line-numbers .line-number.cursor-line-no-selection {
+  atom-text-editor.editor .gutter .line-numbers .line-number.cursor-line-no-selection {
     background-color: fadeout(@selected, 20%) !important;
   }
 
-  atom-text-editor::shadow .line-number.cursor-line-no-selection,
-  atom-text-editor::shadow .gutter .cursor-line,
+  atom-text-editor.editor .line-number.cursor-line-no-selection,
+  atom-text-editor.editor .gutter .cursor-line,
   :host .line-number.cursor-line-no-selection,
   :host .gutter .cursor-line {
     background-color: @gutter-selection;
   }
 
-  atom-text-editor::shadow .gutter {
+  atom-text-editor.editor .gutter {
     &:first-of-type{
       background-color: hsla(48, 20%, 10%, 1.00);
     }
@@ -170,7 +192,7 @@ pigments-color-marker.dot {
     }
   }
 
-  atom-text-editor::shadow .gutter .line-numbers {
+  atom-text-editor.editor .gutter .line-numbers {
     margin: 0;
     .line-number {
       &.cursor-line,
@@ -181,7 +203,7 @@ pigments-color-marker.dot {
     }
   }
 
-  atom-text-editor::shadow .gutter .line-number{
+  atom-text-editor.editor .gutter .line-number{
     background-color: @pane-BG;
   }
 
@@ -206,12 +228,12 @@ pigments-color-marker.dot {
     background-color: @pane-BG;
   }
 
-  atom-text-editor::shadow .wrap-guide {
+  atom-text-editor.editor .wrap-guide {
     background: none;
     border-color: @pane-BG-dark;
   }
 
-  atom-text-editor, atom-text-editor::shadow {
+  atom-text-editor, atom-text-editor.editor {
     .vim-mode-plus-flash .region {
       background-color: fadeout(@background-color-info, 50%);
     }

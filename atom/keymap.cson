@@ -88,3 +88,6 @@
 
 'atom-text-editor.vim-mode-plus-input-char-waiting':
   's': 'unset!'
+
+'.find-and-replace, .project-find, .project-find':
+  'ctrl-c': 'core:cancel'
