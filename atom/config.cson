@@ -57,9 +57,9 @@
   "git-diff": {}
   "highlight-line":
     hideHighlightOnSelect: true
-  linter:
-    gutterPosition: "Left"
-    lintOnFly: false
+  linter: {}
+  "linter-ui-default":
+    showPanel: true
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true

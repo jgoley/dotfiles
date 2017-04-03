@@ -48,6 +48,9 @@ pigments-color-marker.dot {
     background-color: @pane-BG-dark;
   }
 
+  atom-pane-container {
+    padding-top: 0;
+  }
 
   atom-pane-container atom-pane {
     padding-top: 0;
@@ -70,6 +73,7 @@ pigments-color-marker.dot {
       top: 0;
       height: 1px;
       background-color: darken(desaturate(@highlight, 50%),20%);
+      border-radius: 0;
     }
     .tab {
       background: @pane-BG;
@@ -91,6 +95,12 @@ pigments-color-marker.dot {
   .tab-bar .tab.active,
   .tab-bar .tab.active + .tab {
     border-image: none;
+    &::before {
+      height: 3px;
+    }
+    &::after {
+      border: 0;
+    }
   }
 
   .tab-bar .tab.active[data-type$="Editor"],
@@ -239,7 +249,17 @@ pigments-color-marker.dot {
     }
   }
 
- .status-bar-left {
-   padding-left: 10px
- }
+  .status-bar-left {
+    padding-left: 10px
+  }
+
+  .tree-view {
+    &::before {
+      margin-top: 0;
+    }
+
+    .project-root.project-root:first-child {
+       padding-top: 0;
+    }
+  }
 }

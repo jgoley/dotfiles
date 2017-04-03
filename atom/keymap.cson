@@ -10,6 +10,13 @@
   'cmd-shift-F'  : 'project-find:show'
   'cmd-shift-D'  : 'project-find:show-in-current-directory'
 
+'atom-workspace':
+  'cmd-shift-C'  : 'merge-conflicts:detect'
+  'cmd-shift-X'  : 'merge-conflicts:did-quit-conflict-resolution'
+
+'.platform-darwin atom-text-editor:not([mini])':
+  'ctrl-enter': 'tree-view:toggle-focus'
+
 '.platform-darwin':
   'ctrl-enter': 'tree-view:toggle-focus'
   'ctrl-\\'   : 'tree-view:toggle'
