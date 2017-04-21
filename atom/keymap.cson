@@ -9,6 +9,7 @@
   'ctrl-z'       : 'core:undo'
   'cmd-shift-F'  : 'project-find:show'
   'cmd-shift-D'  : 'project-find:show-in-current-directory'
+  'ctrl-s'           : 'jgo:normal-mode-on-save'
 
 'atom-workspace':
   'cmd-shift-C'  : 'merge-conflicts:detect'
@@ -29,27 +30,6 @@
   'ctrl-h': 'core:move-left'
   'ctrl-l': 'core:move-right'
 
-'body':
-  'ctrl-alt-cmd-r'   : 'window:reload'
-  'ctrl-s'           : 'jgo:normal-mode-on-save'
-  'ctrl-]'           : 'pane:show-next-item'
-  'ctrl-['           : 'pane:show-previous-item'
-  'ctrl-cmd-s'       : 'window:save-all'
-  'ctrl-cmd-w'       : 'window:close'
-  'ctrl-,'           : 'editor:outdent-selected-rows'
-  'ctrl-.'           : 'editor:indent-selected-rows'
-  'ctrl-/'           : 'editor:toggle-line-comments'
-  'ctrl-cmd-shift-l' : 'jgo:go-light'
-  'ctrl-cmd-shift-d' : 'jgo:go-dark'
-  'ctrl-k'           : 'core:move-up'
-  'ctrl-j'           : 'core:move-down'
-  'ctrl-h'           : 'core:move-left'
-  'ctrl-l'           : 'core:move-right'
-  'right'            : '!unset'
-  'left'             : '!unset'
-  'down'             : '!unset'
-  'up'               : '!unset'
-
 '.tree-view':
   'D' : 'tree-view:remove'
   'r' : 'tree-view:rename'
@@ -61,7 +41,6 @@
   'ctrl-l': 'tree-view:recursive-expand-directory'
   'ctrl-h': 'tree-view:recursive-collapse-directory'
 
-
 '.platform-darwin atom-text-editor.vim-mode-plus':
   'ctrl-shift-P': 'clipboard-plus:toggle'
 
@@ -71,6 +50,7 @@
   'shift-A' : 'vim-mode-plus:insert-after-end-of-line'
   's'       : 'vim-mode-plus:surround'
   's w'     : 'vim-mode-plus:surround-word'
+  's W'     : 'vim-mode-plus:surround-smart-word'
   'm s'     : 'vim-mode-plus:map-surround'
   'd s'     : 'vim-mode-plus:delete-surround-any-pair'
   'c s'     : 'vim-mode-plus:change-surround-any-pair'
@@ -93,8 +73,25 @@
   'down'             : '!unset'
   'up'               : '!unset'
 
-'atom-text-editor.vim-mode-plus-input-char-waiting':
-  's': 'unset!'
-
 '.find-and-replace, .project-find, .project-find':
   'ctrl-c': 'core:cancel'
+
+'body':
+  'ctrl-alt-cmd-r'   : 'window:reload'
+  'ctrl-]'           : 'pane:show-next-item'
+  'ctrl-['           : 'pane:show-previous-item'
+  'ctrl-cmd-s'       : 'window:save-all'
+  'ctrl-cmd-w'       : 'window:close'
+  'ctrl-,'           : 'editor:outdent-selected-rows'
+  'ctrl-.'           : 'editor:indent-selected-rows'
+  'ctrl-/'           : 'editor:toggle-line-comments'
+  'ctrl-cmd-shift-l' : 'jgo:go-light'
+  'ctrl-cmd-shift-d' : 'jgo:go-dark'
+  'ctrl-k'           : 'core:move-up'
+  'ctrl-j'           : 'core:move-down'
+  'ctrl-h'           : 'core:move-left'
+  'ctrl-l'           : 'core:move-right'
+  'right'            : '!unset'
+  'left'             : '!unset'
+  'down'             : '!unset'
+  'up'               : '!unset'
