@@ -16,7 +16,7 @@ appMash = [
 keys = []
 MARGIN_X = 5
 MARGIN_Y = 5
-GRID_WIDTH = 2
+GRID_WIDTH = 10
 
 showModal = (message, duration) ->
   modal = new Modal

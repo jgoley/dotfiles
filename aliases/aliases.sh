@@ -69,5 +69,3 @@ karabiner(){
       $KARABINER_DIR export > $DOTFILES_DIR/karabiner/karabiner-import.sh
   esac
 }
-
-alias ec='SPA_MONGO_URL=mongodb://localhost:27018/promed MONGO_URL=mongodb://localhost:27017/eidr-connect GRITS_API_KEY=Cr9LPAtL meteor --settings settings-dev.json'

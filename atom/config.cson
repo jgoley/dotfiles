@@ -26,9 +26,9 @@
       ".svn"
       ".DS_Store"
       "Thumbs.db"
-      ".meteor"
       "bower_components"
       ".site"
+      ".meteor"
       "node_modules"
     ]
     packagesWithKeymapsDisabled: []
@@ -59,7 +59,7 @@
     hideHighlightOnSelect: true
   linter: {}
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 66
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true
@@ -71,6 +71,12 @@
       "find-and-replaceDecorationsZIndex": 0
       selection: true
       selectionDecorationsZIndex: 0
+  navigate:
+    f1: "http://devdocs.io/#q=&searchterm"
+    f10: "https://duckduckgo.com/?q=&searchterm"
+    f6: "http://www.bing.com/search?q=&searchterm"
+    newwindow: true
+    openInSameWindow: false
   "one-dark-ui":
     fontSize: 12
   "one-light-ui":
@@ -82,7 +88,7 @@
     createOnChange: true
     forceOverwrite: true
   pigments:
-    markerType: "dot"
+    markerType: "background"
   "project-folder": {}
   "relative-numbers": {}
   "split-diff":

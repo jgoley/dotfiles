@@ -17,6 +17,7 @@ coffeelint.json
 ######################
 node_modules
 npm-debug.log*
+.npm
 
 # ETC
 ######################
