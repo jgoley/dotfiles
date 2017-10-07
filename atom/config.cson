@@ -18,6 +18,7 @@
     disabledPackages: [
       "linter-stylint"
       "linter-coffeelint"
+      "merge-conflicts"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
@@ -58,8 +59,7 @@
   "highlight-line":
     hideHighlightOnSelect: true
   linter: {}
-  "linter-ui-default":
-    panelHeight: 66
+  "linter-ui-default": {}
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true
@@ -87,10 +87,10 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
-  pigments:
-    markerType: "background"
+  pigments: {}
   "project-folder": {}
-  "relative-numbers": {}
+  "relative-numbers":
+    showAbsoluteNumbers: true
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
