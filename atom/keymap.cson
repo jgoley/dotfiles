@@ -84,7 +84,6 @@
   'left'             : '!unset'
   'down'             : '!unset'
   'up'               : '!unset'
-  'ctrl-v'           : '!unset'
   'ctrl-alt-cmd-r'   : 'window:reload'
   'ctrl-]'           : 'pane:show-next-item'
   'ctrl-['           : 'pane:show-previous-item'

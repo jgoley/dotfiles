@@ -192,10 +192,7 @@ rules: [
           bundle_identifiers: [ 'com.github.atom' ]
         ]
         from:
-          key_code: 'c'
-          modifiers:
-            mandatory: [ 'escape' ]
-            optional: [ 'any' ]
+          key_code: 'escape'
         to: [
           key_code: 'c'
           modifiers: [
