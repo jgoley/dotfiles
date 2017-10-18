@@ -87,8 +87,7 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
-  pigments:
-    markerType: "background"
+  pigments: {}
   "project-folder": {}
   "relative-numbers": {}
   "split-diff":
@@ -120,6 +119,8 @@
     flashOnUndoRedoDuration: 200
     highlightSearch: true
     ignoreCaseForSearch: true
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+    sequentialPaste: true
     setCursorToStartOfChangeOnUndoRedo: true
     showHoverOnOperate: true
     showHoverOnOperateIcon: "none"
