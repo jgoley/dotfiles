@@ -9,7 +9,9 @@
   'ctrl-z'       : 'core:undo'
   'cmd-shift-F'  : 'project-find:show'
   'cmd-shift-D'  : 'project-find:show-in-current-directory'
-  'ctrl-s'           : 'jgo:normal-mode-on-save'
+  'ctrl-s'       : 'jgo:normal-mode-on-save'
+  'ctrl-,'       : 'editor:outdent-selected-rows'
+  'ctrl-.'       : 'editor:indent-selected-rows'
 
 'atom-workspace':
   'cmd-shift-C'  : 'merge-conflicts:detect'
@@ -19,6 +21,7 @@
   'ctrl-enter': 'tree-view:toggle-focus'
 
 '.platform-darwin':
+  'ctrl-cmd-f'       : '!unset'
   'ctrl-enter': 'tree-view:toggle-focus'
   'ctrl-\\'   : 'tree-view:toggle'
   'ctrl-p'    : 'fuzzy-finder:toggle-file-finder'
@@ -77,13 +80,16 @@
   'ctrl-c': 'core:cancel'
 
 'body':
+  'right'            : '!unset'
+  'left'             : '!unset'
+  'down'             : '!unset'
+  'up'               : '!unset'
+  'ctrl-v'           : '!unset'
   'ctrl-alt-cmd-r'   : 'window:reload'
   'ctrl-]'           : 'pane:show-next-item'
   'ctrl-['           : 'pane:show-previous-item'
   'ctrl-cmd-s'       : 'window:save-all'
   'ctrl-cmd-w'       : 'window:close'
-  'ctrl-,'           : 'editor:outdent-selected-rows'
-  'ctrl-.'           : 'editor:indent-selected-rows'
   'ctrl-/'           : 'editor:toggle-line-comments'
   'ctrl-cmd-shift-l' : 'jgo:go-light'
   'ctrl-cmd-shift-d' : 'jgo:go-dark'
@@ -91,7 +97,3 @@
   'ctrl-j'           : 'core:move-down'
   'ctrl-h'           : 'core:move-left'
   'ctrl-l'           : 'core:move-right'
-  'right'            : '!unset'
-  'left'             : '!unset'
-  'down'             : '!unset'
-  'up'               : '!unset'
