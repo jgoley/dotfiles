@@ -1,0 +1,316 @@
+title: 'Jgo Karibiner Complex Modifications'
+rules: [
+  {
+    description: 'Tab switchers using left_control nad {/}'
+    manipulators: [
+
+      # opt-cmd-right -> ctrl-}
+      {
+        type: 'basic'
+        from:
+          key_code: 'close_bracket'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'right_arrow'
+          modifiers: [
+            'left_option'
+            'left_command'
+          ]
+        ]
+      }
+
+      # opt-cmd-left -> ctrl-{
+      {
+        type: 'basic'
+        from:
+          key_code: 'open_bracket'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'left_arrow'
+          modifiers: [
+            'left_option'
+            'left_command'
+          ]
+        ]
+      }
+    ]
+  }
+  {
+    description: 'Change cursors to left_control-h/j/k/l'
+    manipulators: [
+
+      # left -> h
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'h'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [ key_code: 'left_arrow' ]
+      }
+
+      # up -> k
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'k'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [ key_code: 'up_arrow' ]
+      }
+
+      # down -> j
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'j'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [ key_code: 'down_arrow' ]
+      }
+
+      # right -> l
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'l'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [ key_code: 'right_arrow' ]
+      }
+    ]
+  }
+  {
+    description: 'Change common command-blah to control-blah'
+    manipulators: [
+
+      # cmd-s -> ctrl-s | Unless Atom
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 's'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 's'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-w -> ctrl-w
+      {
+        type: 'basic'
+        from:
+          key_code: 'w'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'w'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-r -> ctrl-r | Unless Atom
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'r'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'r'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-c -> ctrl-c | Unless Terminal, Atom
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.apple.Terminal', 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'c'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'c'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # ctrl-c -> cescape | Only in Atom
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'c'
+          modifiers:
+            mandatory: [ 'escape' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'c'
+          modifiers: [
+            'left_control'
+          ]
+        ]
+      }
+
+      # cmd-x -> ctrl-x
+      {
+        type: 'basic'
+        from:
+          key_code: 'x'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'x'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-v -> ctrl-v | Unless Atom
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'v'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'v'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-q -> ctrl-q
+      {
+        type: 'basic'
+        from:
+          key_code: 'q'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'q'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-t -> ctrl-t | Unless Atom
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 't'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 't'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-n -> ctrl-n
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ 'com.github.atom' ]
+        ]
+        from:
+          key_code: 'n'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'n'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+
+      # cmd-f -> ctrl-f
+      {
+        type: 'basic'
+        from:
+          key_code: 'f'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'f'
+          modifiers: [
+            'left_command'
+          ]
+        ]
+      }
+    ]
+  }
+]
