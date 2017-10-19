@@ -1,6 +1,6 @@
 . variables.sh
 
-DOTFILES="git phoenix zsh atom Karabiner"
+DOTFILES="git phoenix zsh atom"
 
 link_files () {
   cd $DOTFILES_DIR
@@ -10,7 +10,7 @@ link_files () {
       PATH_FILE=$CURRENT_DIR/$FOLDER/$FILE
       FILE_LINKED_NAME=$DOT$FILE
       PATH_FILE_linked=$DESTINATION$FILE_LINKED_NAME
-      if [ ! "$PATH_FILE_linked" ]
+      if [ ! -f $PATH_FILE_linked ]
       then
         ln -s $PATH_FILE $PATH_FILE_linked
         echo $GREEN $CHECK $PATH_FILE_linked" linked" $WHITE
@@ -30,10 +30,6 @@ for FOLDER in $DOTFILES
     case "$FOLDER" in
       "atom")
         DESTINATION=$HOME/.atom/
-        DOT=""
-      ;;
-      "Karabiner")
-        DESTINATION=$HOME/Library/Application\ Support/Karabiner/
         DOT=""
       ;;
     esac

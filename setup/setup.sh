@@ -10,6 +10,6 @@
 
 . $DOTFILES_DIR/OSX/set-defaults.sh
 
-sh $DOTFILES_DIR/Karabiner/karabiner-import.sh
+sh install_npms.sh
 
-. install_npms.sh
+. $DOTFILES_DIR/Karabiner/karabiner-import.sh
