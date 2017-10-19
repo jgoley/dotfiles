@@ -69,7 +69,7 @@ karabiner(){
       $KARABINER_DIR export > $DOTFILES_DIR/karabiner/karabiner-import.sh
     ;;
     "parse")
-      cson2json $DOTFILES_DIR/Karabiner/complex_modifications.cson > $DOTFILES_DIR/Karabiner/complex_modifications.json
-      cat $DOTFILES_DIR/Karabiner/complex_modifications.json
+      cson2json $DOTFILES_DIR/karabiner/complex_modifications.cson > $DOTFILES_DIR/karabiner/complex_modifications.json
+      cat $DOTFILES_DIR/karabiner/complex_modifications.json
   esac
 }
