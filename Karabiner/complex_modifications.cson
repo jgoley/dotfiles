@@ -37,6 +37,48 @@ rules: [
           ]
         ]
       }
+
+      # opt-shift-left -> ctrl-{
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.github.Terminal' ]
+        ]
+        from:
+          key_code: 'open_bracket'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'left_arrow'
+          modifiers: [
+            'left_option'
+            'left_shift'
+          ]
+        ]
+      }
+
+      # opt-shift-left -> ctrl-}
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.github.Terminal' ]
+        ]
+        from:
+          key_code: 'close_bracket'
+          modifiers:
+            mandatory: [ 'left_control' ]
+            optional: [ 'any' ]
+        to: [
+          key_code: 'right_arrow'
+          modifiers: [
+            'left_option'
+            'left_shift'
+          ]
+        ]
+      }
     ]
   }
   {
