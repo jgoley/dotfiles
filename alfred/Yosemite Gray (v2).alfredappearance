@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 4,
+      "subtext" : {
+        "size" : 10,
+        "colorSelected" : "#E6E6E6FF",
+        "font" : "Avenir Next",
+        "color" : "#5E5E5EFF"
+      },
+      "shortcut" : {
+        "size" : 13,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "Avenir Next",
+        "color" : "#717171FF"
+      },
+      "backgroundSelected" : "#8A8A903F",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "Avenir Next",
+        "color" : "#CDCDCDFF"
+      },
+      "iconPaddingHorizontal" : 5,
+      "paddingVertical" : 0,
+      "iconSize" : 40
+    },
+    "search" : {
+      "paddingVertical" : 13,
+      "background" : "#8D91923F",
+      "spacing" : 10,
+      "text" : {
+        "size" : 40,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "Avenir Next",
+        "color" : "#FEFFFFFF"
+      },
+      "backgroundSelected" : "#4278F5FF"
+    },
+    "window" : {
+      "color" : "#000000A4",
+      "paddingHorizontal" : 10,
+      "width" : 680,
+      "borderPadding" : 10,
+      "borderColor" : "#C24D5900",
+      "blur" : 40,
+      "roundness" : 3,
+      "paddingVertical" : 10
+    },
+    "credit" : "Jonathan",
+    "separator" : {
+      "color" : "#FEFFFF11",
+      "thickness" : 1
+    },
+    "scrollbar" : {
+      "color" : "#FEFFFF5F",
+      "thickness" : 3
+    },
+    "name" : "Yosemite Gray (v2)"
+  }
+}

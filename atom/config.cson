@@ -1,4 +1,6 @@
 "*":
+  "atom-increment":
+    incValue: 1
   "autocomplete-js-import":
     importTypes:
       es6: false
@@ -18,6 +20,8 @@
     disabledPackages: [
       "linter-stylint"
       "linter-coffeelint"
+      "line-diff-details"
+      "linter-haml"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
@@ -40,7 +44,7 @@
     ]
   date: {}
   editor:
-    fontSize: 12
+    fontSize: 13
     invisibles:
       eol: "↴"
       space: "•"
@@ -105,6 +109,7 @@
   "tree-view":
     focusOnReveal: false
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
