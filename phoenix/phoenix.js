@@ -1,5 +1,9 @@
 #!/usr/bin/env coffee -b -p
 
+Phoenix.set
+  daemon: true
+  openAtLogin: true
+
 hyper = [
   'cmd'
   'alt'
@@ -32,7 +36,7 @@ changeGridWidth = (amount) ->
 
 Window::getGrid = ->
   winFrame = @frame()
-  screenRect = @screen().visibleFrameInRectangle()
+  screenRect = @screen().frame()
   thirdScreenWidth = screenRect.width / GRID_WIDTH
   halfScreenHeight = screenRect.height / 2
 
@@ -42,7 +46,7 @@ Window::getGrid = ->
   h: Math.max(1, Math.round(winFrame.height / halfScreenHeight))
 
 Window::setGrid = (grid, screen) ->
-  screenRect = screen.visibleFrameInRectangle()
+  screenRect = screen.frame()
   thirdScreenWidth = screenRect.width / GRID_WIDTH
   halfScreenHeight = screenRect.height / 2
   newFrame =
@@ -59,6 +63,51 @@ Window::setGrid = (grid, screen) ->
 Window::snapToGrid = ->
   if @isNormal()
     @setGrid @getGrid(), @screen()
+
+Window::setWindowsPerSpace = (numWindows) ->
+  Phoenix.notify "Setting windows to #{numWindows}"
+  Phoenix.log Window.all()
+
+Window::moveRight = ->
+  grid = @getGrid()
+  grid.x = Math.min(grid.x + 1, GRID_WIDTH - grid.w)
+  @setGrid(grid, @screen())
+
+Window::expandRight = ->
+  grid = @getGrid()
+  if grid.w == GRID_WIDTH - grid.x and grid.x isnt 0
+    ++grid.w
+    --grid.x
+  else
+    grid.w = Math.min(grid.w + 1, GRID_WIDTH - grid.x)
+  @setGrid(grid, @screen())
+
+Window::compress = ->
+  grid = @getGrid()
+  grid.w = Math.max(grid.w - 1, 1)
+  @setGrid(grid, @screen())
+
+log = (toLog) ->
+  toLog
+
+['1', '2', '3', '4', '5', '6', '7', '8', '9'].forEach (number) ->
+  keys.push new Key number, hyper, ->
+    number = +number
+    screenRect = Window.focused().screen().frame()
+    windowWidth = Math.round(screenRect.width / number)
+    windowWidth -= MARGIN_X * 2.0
+    windowHeight = screenRect.height
+    Window.recent().forEach (win, i) ->
+      windowXPosition = windowWidth * i
+      if number == 1
+        win.maximize()
+      else
+        win.setFrame
+          x: windowXPosition
+          y: MARGIN_Y
+          width: windowWidth
+          height: windowHeight
+        win.snapToGrid()
 
 # Snap focused window to grid
 keys.push new Key ';', hyper, ->
@@ -112,29 +161,20 @@ keys.push new Key 'H', hyper, ->
 # Move window to right
 keys.push new Key 'L', hyper, ->
   win = Window.focused()
-  f = win.getGrid()
-  f.x = Math.min(f.x + 1, GRID_WIDTH - f.w)
-  win.setGrid f, win.screen()
+  win.moveRight()
 
 # Expand window to right.
 # If window is against the right side of screen and not full screen,
 # window will expand to left
 keys.push new Key 'O', hyper, ->
   win = Window.focused()
-  f = win.getGrid()
-  if f.w == GRID_WIDTH - f.x and f.x isnt 0
-    ++f.w
-    --f.x
-  else
-    f.w = Math.min(f.w + 1, GRID_WIDTH - f.x)
-  win.setGrid f, win.screen()
+  win.neighbours('east').forEach (neighbour) ->
+    neighbour.moveRight()
+  win.expandRight()
 
 # Compress window to left
 keys.push new Key 'I', hyper, ->
-  win = Window.focused()
-  f = win.getGrid()
-  f.w = Math.max(f.w - 1, 1)
-  win.setGrid f, win.screen()
+  Window.focused().compress()
 
 # Move to lower half of screen
 keys.push new Key 'J', hyper, ->
@@ -159,6 +199,9 @@ keys.push new Key 'U', hyper, ->
   f.y = 0
   f.h = 2
   win.setGrid f, win.screen()
+
+keys.push new Key 'F', hyper, ->
+  Window.focused().setFullScreen()
 
 ###
  App related Key Bindings
