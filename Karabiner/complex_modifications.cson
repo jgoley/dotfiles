@@ -402,7 +402,7 @@ rules: [
       # cmd-f -> ctrl-f
       {
         type: 'basic'
-        to:
+        from:
           key_code: 'f'
           modifiers:
             mandatory: [ 'left_control' ]

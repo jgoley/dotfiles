@@ -111,6 +111,8 @@
     iconSize: "16px"
     position: "Left"
   "tree-view":
+    alwaysOpenExisting: true
+    autoReveal: true
     focusOnReveal: false
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true

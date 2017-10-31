@@ -22,10 +22,11 @@ MARGIN_X = 5
 MARGIN_Y = 5
 GRID_WIDTH = 10
 
-showModal = (message, duration) ->
+
+showModal = (message, duration=2) ->
   modal = new Modal
   modal.message = message
-  modal.duration = duration or 2
+  modal.duration = duration
   modal.show()
 
 changeGridWidth = (amount) ->
@@ -33,6 +34,13 @@ changeGridWidth = (amount) ->
   Phoenix.notify "Grid is now #{GRID_WIDTH} tiles wide"
   _.each Window.all(visible: true), (win) ->
     win.snapToGrid()
+
+calculateWindowPosition = (windowNumber, windowWidth) ->
+  position = windowWidth * windowNumber
+  if windowNumber > 0
+    position += (MARGIN_X * 2) * windowNumber + MARGIN_X
+  position or MARGIN_X
+
 
 Window::getGrid = ->
   winFrame = @frame()
@@ -64,14 +72,11 @@ Window::snapToGrid = ->
   if @isNormal()
     @setGrid @getGrid(), @screen()
 
-Window::setWindowsPerSpace = (numWindows) ->
-  Phoenix.notify "Setting windows to #{numWindows}"
-  Phoenix.log Window.all()
-
 Window::moveRight = ->
   grid = @getGrid()
   grid.x = Math.min(grid.x + 1, GRID_WIDTH - grid.w)
   @setGrid(grid, @screen())
+  @
 
 Window::expandRight = ->
   grid = @getGrid()
@@ -81,32 +86,28 @@ Window::expandRight = ->
   else
     grid.w = Math.min(grid.w + 1, GRID_WIDTH - grid.x)
   @setGrid(grid, @screen())
+  @
 
 Window::compress = ->
   grid = @getGrid()
   grid.w = Math.max(grid.w - 1, 1)
   @setGrid(grid, @screen())
-
-log = (toLog) ->
-  Phoenix.log(toLog)
-
-calculateWindowPosition = (windowNumber, windowWidth) ->
-  position = windowWidth * windowNumber
-  if windowNumber > 0
-    position += (MARGIN_X * 2) * windowNumber
-  position
+  @
 
 ['1', '2', '3', '4', '5', '6', '7', '8', '9'].forEach (number) ->
   keys.push new Key number, hyper, ->
     number = +number
-    recentWindows = Window.recent()
-    screenFrame = Window.focused().screen().frame()
-    marginAdjustment = (number - 1) * (MARGIN_X * 2)
+    doubleMargin = MARGIN_X * 2
+    screen = Window.focused().screen()
+    screenFrame = screen.frame()
+    # Calculate adjustment based on margin of each window and padding on
+    # left and right of screen
+    marginAdjustment = (number - 1) * doubleMargin + doubleMargin
     windowWidth = Math.round((screenFrame.width  - marginAdjustment) / number)
-    windowHeight = screenFrame.height - MARGIN_Y * 2
+    windowHeight = screenFrame.height - doubleMargin
     overflowPosition = 0
 
-    recentWindows.forEach (win, i) ->
+    screen.windows(visible: true).forEach (win, i) ->
       if i < number
         windowXPosition = calculateWindowPosition(i, windowWidth)
       else # If there are more windows than positions
@@ -117,6 +118,7 @@ calculateWindowPosition = (windowNumber, windowWidth) ->
         y: MARGIN_Y
         width: windowWidth
         height: windowHeight
+
     if overflowPosition > 0
       Phoenix.notify "There are more than #{number} windows...some overlap."
     if windowWidth <= 400
@@ -174,7 +176,6 @@ keys.push new Key 'H', hyper, ->
 # Move window to right
 keys.push new Key 'L', hyper, ->
   win = Window.focused()
-  log(win.title())
   win.moveRight()
 
 # Expand window to right.
@@ -184,7 +185,8 @@ keys.push new Key 'O', hyper, ->
   win = Window.focused()
   win.expandRight()
   win.neighbours('east').forEach (neighbour) ->
-    neighbour.moveRight()
+    if neighbour.isVisible()
+      neighbour.moveRight()
 
 # Compress window to left
 keys.push new Key 'I', hyper, ->
@@ -215,7 +217,8 @@ keys.push new Key 'U', hyper, ->
   win.setGrid f, win.screen()
 
 keys.push new Key 'F', hyper, ->
-  Window.focused().setFullScreen()
+  win = Window.focused()
+  win.setFullScreen(not win.isFullScreen())
 
 ###
  App related Key Bindings
@@ -223,3 +226,6 @@ keys.push new Key 'F', hyper, ->
 
 keys.push new Key 'C', appMash, ->
   App.launch('Google Chrome').focus()
+
+keys.push new Key 'T', appMash, ->
+  App.launch('Terminal').focus()
