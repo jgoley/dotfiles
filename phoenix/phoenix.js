@@ -36,22 +36,22 @@ changeGridWidth = (amount) ->
 
 Window::getGrid = ->
   winFrame = @frame()
-  screenRect = @screen().frame()
-  thirdScreenWidth = screenRect.width / GRID_WIDTH
-  halfScreenHeight = screenRect.height / 2
+  screenFrame = @screen().frame()
+  thirdScreenWidth = screenFrame.width / GRID_WIDTH
+  halfScreenHeight = screenFrame.height / 2
 
-  x: Math.round((winFrame.x - screenRect.x) / thirdScreenWidth)
-  y: Math.round((winFrame.y - screenRect.y) / halfScreenHeight)
+  x: Math.round((winFrame.x - screenFrame.x) / thirdScreenWidth)
+  y: Math.round((winFrame.y - screenFrame.y) / halfScreenHeight)
   w: Math.max(1, Math.round(winFrame.width / thirdScreenWidth))
   h: Math.max(1, Math.round(winFrame.height / halfScreenHeight))
 
 Window::setGrid = (grid, screen) ->
-  screenRect = screen.frame()
-  thirdScreenWidth = screenRect.width / GRID_WIDTH
-  halfScreenHeight = screenRect.height / 2
+  screenFrame = screen.frame()
+  thirdScreenWidth = screenFrame.width / GRID_WIDTH
+  halfScreenHeight = screenFrame.height / 2
   newFrame =
-    x: grid.x * thirdScreenWidth + screenRect.x
-    y: grid.y * halfScreenHeight + screenRect.y
+    x: grid.x * thirdScreenWidth + screenFrame.x
+    y: grid.y * halfScreenHeight + screenFrame.y
     width: grid.w * thirdScreenWidth
     height: grid.h * halfScreenHeight
   newFrame.x += MARGIN_X
@@ -88,26 +88,39 @@ Window::compress = ->
   @setGrid(grid, @screen())
 
 log = (toLog) ->
-  toLog
+  Phoenix.log(toLog)
+
+calculateWindowPosition = (windowNumber, windowWidth) ->
+  position = windowWidth * windowNumber
+  if windowNumber > 0
+    position += (MARGIN_X * 2) * windowNumber
+  position
 
 ['1', '2', '3', '4', '5', '6', '7', '8', '9'].forEach (number) ->
   keys.push new Key number, hyper, ->
     number = +number
-    screenRect = Window.focused().screen().frame()
-    windowWidth = Math.round(screenRect.width / number)
-    windowWidth -= MARGIN_X * 2.0
-    windowHeight = screenRect.height
-    Window.recent().forEach (win, i) ->
-      windowXPosition = windowWidth * i
-      if number == 1
-        win.maximize()
-      else
-        win.setFrame
-          x: windowXPosition
-          y: MARGIN_Y
-          width: windowWidth
-          height: windowHeight
-        win.snapToGrid()
+    recentWindows = Window.recent()
+    screenFrame = Window.focused().screen().frame()
+    marginAdjustment = (number - 1) * (MARGIN_X * 2)
+    windowWidth = Math.round((screenFrame.width  - marginAdjustment) / number)
+    windowHeight = screenFrame.height - MARGIN_Y * 2
+    overflowPosition = 0
+
+    recentWindows.forEach (win, i) ->
+      if i < number
+        windowXPosition = calculateWindowPosition(i, windowWidth)
+      else # If there are more windows than positions
+        windowXPosition = calculateWindowPosition(overflowPosition, windowWidth)
+        overflowPosition++
+      win.setFrame
+        x: windowXPosition
+        y: MARGIN_Y
+        width: windowWidth
+        height: windowHeight
+    if overflowPosition > 0
+      Phoenix.notify "There are more than #{number} windows...some overlap."
+    if windowWidth <= 400
+      Phoenix.notify "Some windows probably aren't scaled down due to min app window restrictions."
 
 # Snap focused window to grid
 keys.push new Key ';', hyper, ->
@@ -161,6 +174,7 @@ keys.push new Key 'H', hyper, ->
 # Move window to right
 keys.push new Key 'L', hyper, ->
   win = Window.focused()
+  log(win.title())
   win.moveRight()
 
 # Expand window to right.
@@ -168,9 +182,9 @@ keys.push new Key 'L', hyper, ->
 # window will expand to left
 keys.push new Key 'O', hyper, ->
   win = Window.focused()
+  win.expandRight()
   win.neighbours('east').forEach (neighbour) ->
     neighbour.moveRight()
-  win.expandRight()
 
 # Compress window to left
 keys.push new Key 'I', hyper, ->

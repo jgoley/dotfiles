@@ -204,7 +204,7 @@ rules: [
         ]
       }
 
-      # down -> j
+      # down -> ctrl-j
       {
         type: 'basic'
         from:
@@ -218,7 +218,7 @@ rules: [
         ]
       }
 
-      # right -> l
+      # right -> ctrl-l
       {
         type: 'basic'
         from:
@@ -265,9 +265,7 @@ rules: [
             mandatory: [ 'left_control', 'right_shift' ]
         to: [
           key_code: 'w'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
         conditions: [
           type: 'frontmost_application_unless'
@@ -288,9 +286,7 @@ rules: [
             mandatory: [ 'left_control' ]
         to: [
           key_code: 'r'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
       }
 
@@ -303,9 +299,7 @@ rules: [
             mandatory: [ 'left_control' ]
         to: [
           key_code: 'c'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
         conditions: [
           type: 'frontmost_application_unless'
@@ -324,9 +318,7 @@ rules: [
           key_code: 'escape'
         to: [
           key_code: 'c'
-          modifiers: [
-            'left_control'
-          ]
+          modifiers: [ 'left_control' ]
         ]
       }
 
@@ -339,9 +331,7 @@ rules: [
             mandatory: [ 'left_control' ]
         to: [
           key_code: 'x'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
       }
 
@@ -354,9 +344,7 @@ rules: [
             mandatory: [ 'left_control' ]
         to: [
           key_code: 'v'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
         conditions: [
           type: 'frontmost_application_unless'
@@ -373,9 +361,7 @@ rules: [
             mandatory: [ 'left_control' ]
         to: [
           key_code: 'q'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
       }
 
@@ -392,9 +378,7 @@ rules: [
             mandatory: [ 'left_control' ]
         to: [
           key_code: 't'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
       }
 
@@ -411,24 +395,20 @@ rules: [
             mandatory: [ 'left_control' ]
         to: [
           key_code: 'n'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
       }
 
       # cmd-f -> ctrl-f
       {
         type: 'basic'
-        from:
+        to:
           key_code: 'f'
           modifiers:
             mandatory: [ 'left_control' ]
         to: [
           key_code: 'f'
-          modifiers: [
-            'left_command'
-          ]
+          modifiers: [ 'left_command' ]
         ]
       }
     ]
