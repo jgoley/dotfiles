@@ -61,8 +61,7 @@
   "highlight-line":
     hideHighlightOnSelect: true
   linter: {}
-  "linter-ui-default":
-    panelHeight: 66
+  "linter-ui-default": {}
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true
