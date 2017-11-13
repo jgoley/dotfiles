@@ -11,7 +11,6 @@ rules: [
           key_code: 'close_bracket'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'right_arrow'
           modifiers: [
@@ -28,7 +27,6 @@ rules: [
           key_code: 'open_bracket'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'left_arrow'
           modifiers: [
@@ -82,6 +80,76 @@ rules: [
     ]
   }
   {
+    description: 'Text movement'
+    manipulators: [
+
+      # opt-left -> ctrl-b
+      {
+        type: 'basic'
+        from:
+          key_code: 'b'
+          modifiers:
+            mandatory: [ 'left_control' ]
+        to: [
+          key_code: 'left_arrow'
+          modifiers: [ 'left_option' ]
+        ]
+      }
+
+      # opt-right -> ctrl-w
+      {
+        type: 'basic'
+        from:
+          key_code: 'w'
+          modifiers:
+            mandatory: [ 'left_control' ]
+        to: [
+          key_code: 'right_arrow'
+          modifiers: [ 'left_option' ]
+        ]
+      }
+
+      # opt-right -> ctrl-w
+      {
+        type: 'basic'
+        from:
+          key_code: 'w'
+          modifiers:
+            mandatory: [ 'left_control' ]
+        to: [
+          key_code: 'right_arrow'
+          modifiers: [ 'left_option' ]
+        ]
+      }
+
+      # ctrl-k -> ctrl-shift-a
+      {
+        type: 'basic'
+        from:
+          key_code: 'a'
+          modifiers:
+            mandatory: [ 'left_control', 'right_shift' ]
+        to: [
+          key_code: 'k'
+          modifiers: [ 'left_control' ]
+        ]
+      }
+
+      # delete-opt -> ctrl-shift-b
+      {
+        type: 'basic'
+        from:
+          key_code: 'b'
+          modifiers:
+            mandatory: [ 'left_control', 'right_shift' ]
+        to: [
+          key_code: 'delete_or_backspace'
+          modifiers: [ 'left_option' ]
+        ]
+      }
+    ]
+  }
+  {
     description: 'Change cursors to left_control-h/j/k/l'
     manipulators: [
 
@@ -96,7 +164,6 @@ rules: [
           key_code: 'h'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [ key_code: 'left_arrow' ]
       }
 
@@ -111,7 +178,6 @@ rules: [
           key_code: 'k'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [ key_code: 'up_arrow' ]
       }
 
@@ -126,7 +192,6 @@ rules: [
           key_code: 'j'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [ key_code: 'down_arrow' ]
       }
 
@@ -141,7 +206,6 @@ rules: [
           key_code: 'l'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [ key_code: 'right_arrow' ]
       }
     ]
@@ -161,7 +225,6 @@ rules: [
           key_code: 's'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 's'
           modifiers: [
@@ -176,8 +239,7 @@ rules: [
         from:
           key_code: 'w'
           modifiers:
-            mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
+            mandatory: [ 'left_control', 'right_shift' ]
         to: [
           key_code: 'w'
           modifiers: [
@@ -197,7 +259,6 @@ rules: [
           key_code: 'r'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'r'
           modifiers: [
@@ -217,7 +278,6 @@ rules: [
           key_code: 'c'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'c'
           modifiers: [
@@ -250,7 +310,6 @@ rules: [
           key_code: 'x'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'x'
           modifiers: [
@@ -270,7 +329,6 @@ rules: [
           key_code: 'v'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'v'
           modifiers: [
@@ -286,7 +344,6 @@ rules: [
           key_code: 'q'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'q'
           modifiers: [
@@ -306,7 +363,6 @@ rules: [
           key_code: 't'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 't'
           modifiers: [
@@ -326,7 +382,6 @@ rules: [
           key_code: 'n'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'n'
           modifiers: [
@@ -342,7 +397,6 @@ rules: [
           key_code: 'f'
           modifiers:
             mandatory: [ 'left_control' ]
-            optional: [ 'any' ]
         to: [
           key_code: 'f'
           modifiers: [
@@ -544,6 +598,59 @@ rules: [
             'left_shift'
             'left_command'
           ]
+        ]
+      }
+    ]
+  }
+
+  {
+    description: 'Sketch - Adobe style keyboard shortcuts'
+    manipulators: [
+
+      # Layer order up opt-cmd-up -> ctrl-shift-] | If Sketch
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.bohemiancoding.sketch3' ]
+        ]
+        from:
+          key_code: 'open_bracket'
+          modifiers:
+            mandatory: [ 'left_shift' ]
+        to: [
+          key_code: 'up_arrow'
+          modifiers: [ 'left_option', 'left_command' ]
+        ]
+      }
+
+      # Layer order down opt-cmd-down -> ctrl-shift-[ | If Sketch
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.bohemiancoding.sketch3' ]
+        ]
+        from:
+          key_code: 'close_bracket'
+          modifiers:
+            mandatory: [ 'left_shift' ]
+        to: [
+          key_code: 'down_arrow'
+          modifiers: [ 'left_option', 'left_command' ]
+        ]
+      }
+      # Layer order down opt-cmd-down -> ctrl-shift-[ | If Sketch
+      {
+        type: 'basic'
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.bohemiancoding.sketch3' ]
+        ]
+        from:
+          key_code: 'r'
+        to: [
+          key_code: 'm'
         ]
       }
     ]
