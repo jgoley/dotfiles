@@ -22,6 +22,11 @@
       "linter-coffeelint"
       "line-diff-details"
       "linter-haml"
+      "jade-bootstrap3-snippets"
+      "atom-jade"
+      "snippets-jade"
+      "autocomplete-css-with-stylus-support"
+      "Stylus"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
@@ -89,7 +94,8 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
-  pigments: {}
+  pigments:
+    markerType: "native-square-dot"
   "project-folder": {}
   "relative-numbers": {}
   "split-diff":

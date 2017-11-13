@@ -73,8 +73,8 @@
   'ctrl--' : 'vim-mode-plus:decrease'
   'right'            : '!unset'
   'left'             : '!unset'
-  'down'             : '!unset'
-  'up'               : '!unset'
+  'down'             : 'jgo:insert-newline-below-stay-normal'
+  'up'               : 'jgo:insert-newline-above-stay-normal'
 
 '.find-and-replace, .project-find, .project-find':
   'ctrl-c': 'core:cancel'
