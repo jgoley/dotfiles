@@ -28,7 +28,6 @@
       "autocomplete-css-with-stylus-support"
       "Stylus"
     ]
-    excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".git"
       ".hg"
@@ -66,7 +65,8 @@
   "highlight-line":
     hideHighlightOnSelect: true
   linter: {}
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 66
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true
