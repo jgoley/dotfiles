@@ -58,7 +58,7 @@ Window::setGrid = (grid, screen) ->
   thirdScreenWidth = screenFrame.width / GRID_WIDTH
   halfScreenHeight = screenFrame.height / 2
   newFrame =
-    x: grid.x * thirdScreenWidth + screenFrame.x
+    x: grid.x * thirdSceenWidth + screenFrame.x
     y: grid.y * halfScreenHeight + screenFrame.y
     width: grid.w * thirdScreenWidth
     height: grid.h * halfScreenHeight
