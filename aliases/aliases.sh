@@ -13,6 +13,8 @@ alias vi='mvim'
 alias sa='subl3 .'
 alias atm='atom'
 alias aa='atm .'
+alias acon='git diff --name-only | uniq | xargs atom'
+alias vcon='git diff --name-only | uniq | xargs vi'
 
 # Git
 alias gaa='git add .'

@@ -4,7 +4,8 @@
 :vmap <C-c> <Esc>
 :map  <C-[> gT
 :nmap ) 0i
-:map  <C-w> ZZ
+:map <C-w> <Esc> ZZ
+:imap <C-w> <Esc> ZZ
 
 :map  <C-]> gt
 :map  <C-\> :NERDTreeToggle<CR>
