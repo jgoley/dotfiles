@@ -249,3 +249,9 @@ defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitc
 
 # Enable suck UI animation
 defaults write com.apple.dock mineffect suck; killall Dock
+
+# Increase padding within MacVim window v
+defaults write org.vim.MacVim MMTextInsetTop '10'
+defaults write org.vim.MacVim MMTextInsetLeft '10'
+defaults write org.vim.MacVim MMTextInsetBottom '5'
+defaults write org.vim.MacVim MMTextInsetRight '10'

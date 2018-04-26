@@ -1,0 +1,7 @@
+[
+  { "keys": ["ctrl+enter"], "command": "focus_side_bar" },
+  { "keys": ["ctrl+\\"], "command": "toggle_side_bar" },
+  { "keys": ["ctrl+>"], "command": "indent" },
+  { "keys": ["ctrl+<"], "command": "unindent" },
+]
+

@@ -1,0 +1,21 @@
+:nmap , $p
+:map  <C-s> :w <CR> <Esc>
+:imap <C-c> <Esc>
+:vmap <C-c> <Esc>
+:map  <C-[> gT
+:nmap ) 0i
+:map  <C-w> ZZ
+
+:map  <C-]> gt
+:map  <C-\> :NERDTreeToggle<CR>
+:noremap  <C-Enter> <C-w>w
+:map  <C-j> o<Esc>
+:map  <C-k> O<Esc>
+
+:cmap <C-k> <Up>
+:cmap <C-j> <Down>
+:cmap <C-l> <Right>
+:cmap <C-h> <Left>
+
+:map y <Plug>(operator-flashy)
+:nmap Y <Plug>(operator-flashy)$

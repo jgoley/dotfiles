@@ -9,6 +9,7 @@ alias code='~/code'
 alias dots='$DOTFILES_DIR && aa'
 
 # Editors
+alias vi='mvim'
 alias sa='subl3 .'
 alias atm='atom'
 alias aa='atm .'
@@ -55,7 +56,7 @@ alias mtrcp='meteor create --package'
 # Misc
 alias god='sh $DOTFILES_DIR/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal
 alias gol='sh $DOTFILES_DIR/util/go_light.sh'    # Sets light theme on OSX, Atom and terminal
-alias zr='exec zsh'                                 # Resets oh-my-zsh
+alias zr='exec zsh'                              # Resets oh-my-zsh
 rm () {
   trash $1
 }

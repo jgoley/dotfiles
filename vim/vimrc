@@ -1,0 +1,87 @@
+" JGo!
+
+set nocompatible
+set encoding=utf-8
+set guifont=Knack\ Nerd\ Font:h11
+
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+" Settings
+set modelines=1 " Allow modelines (i.e. executable comments)
+set switchbuf+=usetab
+set hidden
+set mouse=a
+set showmode                    "smd:   shows current vi mode in lower left
+set cursorline                  "cul:   highlights the current line
+set showcmd                     "sc:    shows typed commands
+set cmdheight=2                 "ch:    make a little more room for error messages
+set sidescroll=2                "ss:    only scroll horizontally little by little
+set scrolloff=2                 "so:    places a line between the current line and the screen edge
+set sidescrolloff=4             "siso:  places a couple columns between the current column and the screen edge
+set laststatus=2                "ls:    makes the status bar always visible
+set ttyfast                     "tf:    improves redrawing for newer computers
+set history=200                 "hi:    number of search patterns and ex commands to remember
+set viminfo='200                "vi:    For a nice, huuuuuge viminfo file
+set clipboard=unnamed           "       Use System clipboard
+set whichwrap+=h,l
+set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+set relativenumber
+set number
+
+" Whitespace Removal
+autocmd BufWritePre * %s/\s\+$//e
+
+" Search
+set incsearch                   " Automatically begins searching as you type
+set hlsearch                    " highlight matches
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+set infercase                   " Use the correct case when autocompleting
+
+" UI
+syntax on
+set background=dark
+colorscheme gruvbox
+set guioptions=                 " Hide scrollbars in MacVim
+" set guifont=DroidSansMono_Nerd_Font:h11
+
+" Airline
+let g:airline_theme='dark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+function! AirlineInit()
+  let g:airline_section_a = airline#section#create(['mode', '  ', 'branch'])
+  let g:airline_section_b = airline#section#create_left(['hunks'])
+"  let g:airline_section_c = airline#section#create(['%f'])
+"  let g:airline_section_x = airline#section#create(['branch', 'ffenc'])
+"  let g:airline_section_y = airline#section#create(['filetype'])
+endfunction
+autocmd VimEnter * call AirlineInit()
+
+" NerdTree Settings
+let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer = 1
+set foldmethod=indent   " fold based on indent level
+set foldnestmax=10      " max 10 depth
+set foldenable          " don't fold files by default on open
+set foldlevelstart=10   " start with fold level of 10
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let NERDTreeShowHidden=1
+" let NERDTreeMapOpenInTab='<ENTER>'
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Flashy map
+hi Flashy guibg=lightyellow
+
+if filereadable(expand("~/.vimrc.remaps"))
+  source ~/.vimrc.remaps
+endif
+

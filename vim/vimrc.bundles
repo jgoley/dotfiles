@@ -1,0 +1,61 @@
+filetype off " required by vundle!
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required!
+Plugin 'gmarik/Vundle.vim'
+
+" Tools
+Plugin 'godlygeek/tabular'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vinegar'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" UI
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'kana/vim-operator-user'
+Plugin 'haya14busa/vim-operator-flashy'
+Plugin 'tpope/vim-fugitive'
+
+" Langs
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'elzr/vim-json'
+
+" Colors
+Plugin 'joshdick/onedark.vim'
+Plugin 'rakr/vim-one'
+Plugin 'ajmwagar/vim-deus'
+Plugin 'morhetz/gruvbox'
+
+" Sensible defaults
+Plugin 'tpope/vim-sensible' " needs to be last
+
+call vundle#end()             " required by vundle!
+filetype plugin indent on     " required by vundle!
+

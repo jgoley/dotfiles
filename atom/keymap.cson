@@ -13,7 +13,7 @@
   'ctrl-,'       : 'editor:outdent-selected-rows'
   'ctrl-.'       : 'editor:indent-selected-rows'
 
-'atom-workspace':
+'atom-wrkspace':
   'cmd-shift-C'  : 'merge-conflicts:detect'
   'cmd-shift-X'  : 'merge-conflicts:did-quit-conflict-resolution'
 

@@ -1,6 +1,26 @@
 title: 'Jgo Karibiner Complex Modifications'
 rules: [
   {
+    description: 'Sublime specific remaps'
+    manipulators: [
+      # escape -> ctrl-c
+      {
+        type: 'basic'
+        from:
+          key_code: 'c'
+          modifiers:
+            mandatory: [ 'left_control' ]
+        to: [
+          key_code: 'escape'
+        ]
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+        ]
+      }
+    ]
+  }
+  {
     description: 'tab switchers using left_control nad {/}'
     manipulators: [
 
@@ -18,6 +38,10 @@ rules: [
             'left_command'
           ]
         ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+        ]
       }
 
       # opt-cmd-left -> ctrl-{
@@ -34,15 +58,15 @@ rules: [
             'left_command'
           ]
         ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+        ]
       }
 
       # opt-shift-left -> ctrl-{
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_if'
-          bundle_identifiers: [ 'com.github.Terminal' ]
-        ]
         from:
           key_code: 'open_bracket'
           modifiers:
@@ -55,15 +79,15 @@ rules: [
             'left_shift'
           ]
         ]
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.github.Terminal' ]
+        ]
       }
 
       # opt-shift-left -> ctrl-}
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_if'
-          bundle_identifiers: [ 'com.github.Terminal' ]
-        ]
         from:
           key_code: 'close_bracket'
           modifiers:
@@ -75,6 +99,10 @@ rules: [
             'left_option'
             'left_shift'
           ]
+        ]
+        conditions: [
+          type: 'frontmost_application_if'
+          bundle_identifiers: [ 'com.github.Terminal' ]
         ]
       }
     ]
@@ -94,18 +122,9 @@ rules: [
           key_code: 'left_arrow'
           modifiers: [ 'left_option' ]
         ]
-      }
-
-      # opt-right -> ctrl-w
-      {
-        type: 'basic'
-        from:
-          key_code: 'w'
-          modifiers:
-            mandatory: [ 'left_control' ]
-        to: [
-          key_code: 'right_arrow'
-          modifiers: [ 'left_option' ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^com\\.github\\.atom$', '^org\\.vim\\.MacVim$']
         ]
       }
 
@@ -119,6 +138,10 @@ rules: [
         to: [
           key_code: 'right_arrow'
           modifiers: [ 'left_option' ]
+        ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^com\\.github\\.atom$', '^org\\.vim\\.MacVim$' ]
         ]
       }
 
@@ -156,57 +179,57 @@ rules: [
       # left -> h
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
-        ]
         from:
           key_code: 'h'
           modifiers:
             mandatory: [ 'left_control' ]
         to: [ key_code: 'left_arrow' ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+        ]
       }
 
       # up -> k
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
-        ]
         from:
           key_code: 'k'
           modifiers:
             mandatory: [ 'left_control' ]
         to: [ key_code: 'up_arrow' ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+        ]
       }
 
       # down -> j
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
-        ]
         from:
           key_code: 'j'
           modifiers:
             mandatory: [ 'left_control' ]
         to: [ key_code: 'down_arrow' ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+        ]
       }
 
       # right -> l
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
-        ]
         from:
           key_code: 'l'
           modifiers:
             mandatory: [ 'left_control' ]
         to: [ key_code: 'right_arrow' ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+        ]
       }
     ]
   }
@@ -217,10 +240,6 @@ rules: [
       # cmd-s -> ctrl-s | Unless Atom
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
-        ]
         from:
           key_code: 's'
           modifiers:
@@ -230,6 +249,10 @@ rules: [
           modifiers: [
             'left_command'
           ]
+        ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^com\\.github\\.atom$' ]
         ]
       }
 
@@ -246,6 +269,10 @@ rules: [
             'left_command'
           ]
         ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^com\\.github\\.atom$', '^org\\.vim\\.MacVim$']
+        ]
       }
 
       # cmd-r -> ctrl-r | Unless Atom
@@ -253,7 +280,7 @@ rules: [
         type: 'basic'
         conditions: [
           type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
+          bundle_identifiers: [ '^com\\.github\\.atom$' ]
         ]
         from:
           key_code: 'r'
@@ -270,10 +297,6 @@ rules: [
       # cmd-c -> ctrl-c | Unless Terminal, Atom
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.apple.Terminal', 'com.github.atom' ]
-        ]
         from:
           key_code: 'c'
           modifiers:
@@ -284,6 +307,10 @@ rules: [
             'left_command'
           ]
         ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^com\\.apple\\.Terminal$', '^com\\.github\\.atom$', '^org\\.vim\\.MacVim$' ]
+        ]
       }
 
       # ctrl-c -> cescape | Only in Atom
@@ -291,7 +318,7 @@ rules: [
         type: 'basic'
         conditions: [
           type: 'frontmost_application_if'
-          bundle_identifiers: [ 'com.github.atom' ]
+          bundle_identifiers: [ '^com\\.github\\.atom$' ]
         ]
         from:
           key_code: 'escape'
@@ -321,10 +348,6 @@ rules: [
       # cmd-v -> ctrl-v | Unless Atom
       {
         type: 'basic'
-        conditions: [
-          type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
-        ]
         from:
           key_code: 'v'
           modifiers:
@@ -334,6 +357,10 @@ rules: [
           modifiers: [
             'left_command'
           ]
+        ]
+        conditions: [
+          type: 'frontmost_application_unless'
+          bundle_identifiers: [ '^com\\.github\\.atom$', '^org\\.vim\\.MacVim$' ]
         ]
       }
 
@@ -357,7 +384,7 @@ rules: [
         type: 'basic'
         conditions: [
           type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
+          bundle_identifiers: [ '^com\\.github\\.atom$' ]
         ]
         from:
           key_code: 't'
@@ -376,7 +403,7 @@ rules: [
         type: 'basic'
         conditions: [
           type: 'frontmost_application_unless'
-          bundle_identifiers: [ 'com.github.atom' ]
+          bundle_identifiers: [ '^com\\.github\\.atom$' ]
         ]
         from:
           key_code: 'n'
@@ -564,7 +591,7 @@ rules: [
         type: 'basic'
         conditions: [
           type: 'frontmost_application_if'
-          bundle_identifiers: [ 'com.apple.Terminal' ]
+          bundle_identifiers: [ '^com\\.apple\\.Terminal$' ]
         ]
         from:
           key_code: 'close_bracket'
@@ -585,7 +612,7 @@ rules: [
         type: 'basic'
         conditions: [
           type: 'frontmost_application_if'
-          bundle_identifiers: [ 'com.apple.Terminal' ]
+          bundle_identifiers: [ '^com\\.apple\\.Terminal$' ]
         ]
         from:
           key_code: 'open_bracket'
