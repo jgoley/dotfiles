@@ -667,19 +667,6 @@ rules: [
           modifiers: [ 'left_option', 'left_command' ]
         ]
       }
-      # Layer order down opt-cmd-down -> ctrl-shift-[ | If Sketch
-      {
-        type: 'basic'
-        conditions: [
-          type: 'frontmost_application_if'
-          bundle_identifiers: [ 'com.bohemiancoding.sketch3' ]
-        ]
-        from:
-          key_code: 'r'
-        to: [
-          key_code: 'm'
-        ]
-      }
     ]
   }
 ]
