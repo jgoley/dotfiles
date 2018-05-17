@@ -282,6 +282,7 @@ rules: [
           type: 'frontmost_application_unless'
           bundle_identifiers: [ '^com\\.github\\.atom$' ]
         ]
+
         from:
           key_code: 'r'
           modifiers:

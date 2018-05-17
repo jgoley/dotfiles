@@ -23,6 +23,15 @@ atom-text-editor.editor div.lines div:last-child .line:last-child {
   }
 }
 
+atom-text-editor {
+  text-rendering: optimizeLegibility;
+}
+
+atom-text-editor.editor .syntax--string.syntax--quoted,
+atom-text-editor.editor .syntax--string.syntax--regexp {
+  -webkit-font-feature-settings: "liga" off, "calt" off;
+}
+
 atom-text-editor.editor pigments-markers::shadow pigments-color-marker.dot,
 pigments-markers::shadow pigments-color-marker.dot,
 pigments-color-marker.dot {

@@ -48,10 +48,11 @@
     ]
   date: {}
   editor:
+    fontFamily: "Fira Code, Menlo, Consolas, DejaVu Sans Mono, monospace"
     invisibles:
       eol: "↴"
       space: "•"
-    scrollPastEnd: false
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
@@ -111,7 +112,6 @@
     iconSize: "16px"
     position: "Left"
   "tree-view":
-    focusOnReveal: false
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
   "vim-mode":

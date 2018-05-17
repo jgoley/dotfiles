@@ -26,6 +26,9 @@
   'ctrl-\\'   : 'tree-view:toggle'
   'ctrl-p'    : 'fuzzy-finder:toggle-file-finder'
 
+'.select-list.fuzzy-finder .editor':
+  'escape'    : 'core:cancel'
+
 '.platform-darwin, .platform-darwin .command-palette atom-text-editor':
   'cmd-ctrl-p': 'command-palette:toggle'
 
@@ -80,10 +83,10 @@
   'ctrl-c': 'core:cancel'
 
 'body':
-  'right'            : '!unset'
-  'left'             : '!unset'
-  'down'             : '!unset'
-  'up'               : '!unset'
+  # 'right'            : '!unset'
+  # 'left'             : '!unset'
+  # 'down'             : '!unset'
+  # 'up'               : '!unset'
   'ctrl-alt-cmd-r'   : 'window:reload'
   'ctrl-]'           : 'pane:show-next-item'
   'ctrl-['           : 'pane:show-previous-item'
