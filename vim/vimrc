@@ -27,7 +27,9 @@ set viminfo='200                "vi:    For a nice, huuuuuge viminfo file
 set clipboard=unnamed           "       Use System clipboard
 set whichwrap+=h,l
 set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
-
+set splitbelow
+set splitright
+let mapleader = ","
 set relativenumber
 set number
 
@@ -44,9 +46,8 @@ set infercase                   " Use the correct case when autocompleting
 " UI
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme monokai
 set guioptions=                 " Hide scrollbars in MacVim
-" set guifont=DroidSansMono_Nerd_Font:h11
 
 " Airline
 let g:airline_theme='dark'
@@ -74,12 +75,14 @@ let g:NERDTreeDirArrowCollapsible = ''
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 let NERDTreeShowHidden=1
 " let NERDTreeMapOpenInTab='<ENTER>'
-
+set autochdir
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Flashy map
 hi Flashy guibg=lightyellow
+
+hi NonText guifg=bg
 
 if filereadable(expand("~/.vimrc.remaps"))
   source ~/.vimrc.remaps

@@ -1,6 +1,15 @@
-filetype off " required by vundle!
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#begin()
+let bundle_path=$HOME . '/.vim/bundle/'
+let vundle_path=$HOME . '/.vim/bundle/Vundle.vim'
+
+if has('nvim')
+  let bundle_path=$HOME . '/.config/nvim/bundle/'
+  let vundle_path=$HOME . '/.config/nvim/bundle/Vundle.vim'
+endif
+
+filetype off " required by !
+  exec 'set rtp+=' . vundle_path
+call vundle#begin(bundle_path)
+
 
 " let Vundle manage Vundle
 " required!
@@ -8,7 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Tools
 Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'sjl/gundo.vim'
@@ -23,6 +32,10 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mileszs/ack.vim'
+Plugin 'airblade/vim-rooter'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'psychollama/further.vim'
 
 " UI
 Plugin 'scrooloose/nerdtree'
@@ -35,6 +48,9 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'kana/vim-operator-user'
 Plugin 'haya14busa/vim-operator-flashy'
 Plugin 'tpope/vim-fugitive'
+Plugin 'shmargum/vim-sass-colors'
+Plugin 'ericbn/vim-relativize'
+Plugin 'kien/rainbow_parentheses.vim'
 
 " Langs
 Plugin 'cakebaker/scss-syntax.vim'
@@ -52,6 +68,8 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'rakr/vim-one'
 Plugin 'ajmwagar/vim-deus'
 Plugin 'morhetz/gruvbox'
+Plugin 'vim-scripts/SlateDark'
+Plugin 'crusoexia/vim-monokai'
 
 " Sensible defaults
 Plugin 'tpope/vim-sensible' " needs to be last

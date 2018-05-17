@@ -1,9 +1,10 @@
-filetype off " required by vundle!
-set rtp+=$HOME/.config/nvim/bundles/Vundle.vim
-call vundle#begin()
-Plugin 'tpope/vim-surround'
-call vundle#end()             " required by vundle!
-filetype plugin indent on     " required by vundle!
+set nocompatible
+set encoding=utf-8
+set guifont=Knack\ Nerd\ Font:h11
+
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
 
 set clipboard=unnamed           "       Use System clipboard
 

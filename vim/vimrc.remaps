@@ -1,22 +1,33 @@
-:nmap , $p
-:map  <C-s> :w <CR> <Esc>
-:imap <C-c> <Esc>
-:vmap <C-c> <Esc>
-:map  <C-[> gT
-:nmap ) 0i
-:map <C-w> <Esc> ZZ
-:imap <C-w> <Esc> ZZ
+nmap , $p
+map  <C-s> :w <CR> <Esc>
+imap <C-c> <Esc>
+vmap <C-c> <Esc>
+nmap ) 0i
+map <C-w> <Esc> ZZ
+imap <C-w> <Esc> ZZ
 
-:map  <C-]> gt
-:map  <C-\> :NERDTreeToggle<CR>
-:noremap  <C-Enter> <C-w>w
-:map  <C-j> o<Esc>
-:map  <C-k> O<Esc>
+map  <C-]> gt
+map  <C-[> gT
 
-:cmap <C-k> <Up>
-:cmap <C-j> <Down>
-:cmap <C-l> <Right>
-:cmap <C-h> <Left>
+noremap  <C-Enter> <C-w>w
+cmap <C-k> <Up>
+cmap <C-j> <Down>
+cmap <C-l> <Right>
+cmap <C-h> <Left>
 
-:map y <Plug>(operator-flashy)
-:nmap Y <Plug>(operator-flashy)$
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
+
+map  <C-\> :NERDTreeToggle<CR>
+map  <C-/> :NERDComToggleComment
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+nnoremap  <C-j>j o<Esc>
+nnoremap  <C-k>k O<Esc>
+
+nnoremap <C-S-f> :Ack<Space>
+
