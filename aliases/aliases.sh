@@ -55,6 +55,11 @@ alias mtru='meteor update'
 alias mtrnpm='meteor npm install --save'
 alias mtrcp='meteor create --package'
 
+# Rails
+alias rails='bin/rails'
+alias rs='bin/rails s'
+alias rc='bin/rails c'
+
 # Misc
 alias god='sh $DOTFILES_DIR/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal
 alias gol='sh $DOTFILES_DIR/util/go_light.sh'    # Sets light theme on OSX, Atom and terminal

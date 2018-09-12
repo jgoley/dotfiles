@@ -36,17 +36,6 @@
   'ctrl-h': 'core:move-left'
   'ctrl-l': 'core:move-right'
 
-'.tree-view':
-  'D' : 'tree-view:remove'
-  'r' : 'tree-view:rename'
-  'x' : 'tree-view:cut'
-  'v' : 'tree-view:paste'
-  'c' : 'tree-view:copy'
-  'ctrl-k': 'core:move-to-top'
-  'ctrl-j': 'core:move-to-bottom'
-  'ctrl-l': 'tree-view:recursive-expand-directory'
-  'ctrl-h': 'tree-view:recursive-collapse-directory'
-
 '.platform-darwin atom-text-editor.vim-mode-plus':
   'ctrl-shift-P': 'clipboard-plus:toggle'
 
@@ -99,3 +88,15 @@
   'ctrl-j'           : 'core:move-down'
   'ctrl-h'           : 'core:move-left'
   'ctrl-l'           : 'core:move-right'
+
+'.tree-view':
+  'D' : 'tree-view:remove'
+  'r' : 'tree-view:rename'
+  'x' : 'tree-view:cut'
+  'v' : 'tree-view:paste'
+  'c' : 'tree-view:copy'
+
+  'ctrl-k': 'core:move-to-top'
+  'ctrl-j': 'core:move-to-bottom'
+  'ctrl-l': 'tree-view:recursive-expand-directory'
+  'ctrl-h': 'tree-view:recursive-collapse-directory'
