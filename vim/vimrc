@@ -2,7 +2,7 @@
 
 set nocompatible
 set encoding=utf-8
-set guifont=Knack\ Nerd\ Font:h11
+set guifont=Hack\ Nerd\ Font:h11
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles

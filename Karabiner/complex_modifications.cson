@@ -228,7 +228,7 @@ rules: [
         to: [ key_code: 'right_arrow' ]
         conditions: [
           type: 'frontmost_application_unless'
-          bundle_identifiers: [ '^org\\.vim\\.MacVim$' ]
+          bundle_identifiers: [ '^org\\.vim\\.MacVim$', 'com.bohemiancoding.sketch3'  ]
         ]
       }
     ]

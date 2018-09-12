@@ -27,6 +27,10 @@
       "snippets-jade"
       "autocomplete-css-with-stylus-support"
       "Stylus"
+      "linter"
+      "linter-sass-lint"
+      "linter-ui-default"
+      "pigments"
     ]
     ignoredNames: [
       ".git"
@@ -68,6 +72,7 @@
   linter: {}
   "linter-ui-default":
     panelHeight: 66
+    showPanel: true
   minimap:
     displayCodeHighlights: false
     ignoreWhitespacesInTokens: true
@@ -98,7 +103,8 @@
   pigments:
     markerType: "native-square-dot"
   "project-folder": {}
-  "relative-numbers": {}
+  "relative-numbers":
+    showAbsoluteNumbers: true
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
@@ -112,6 +118,7 @@
     iconSize: "16px"
     position: "Left"
   "tree-view":
+    autoReveal: true
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
   "vim-mode":
