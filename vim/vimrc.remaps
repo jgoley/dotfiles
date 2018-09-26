@@ -19,7 +19,6 @@ map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 map  <C-\> :NERDTreeToggle<CR>
-map  <C-/> :NERDComToggleComment
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

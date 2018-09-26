@@ -403,7 +403,7 @@ rules: [
         type: 'basic'
         conditions: [
           type: 'frontmost_application_unless'
-          bundle_identifiers: [ '^com\\.github\\.atom$' ]
+          bundle_identifiers: [ '^com\\.github\\.atom$',  '^org\\.vim\\.MacVim$' ]
         ]
         from:
           key_code: 'n'

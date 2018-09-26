@@ -36,6 +36,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-rooter'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'psychollama/further.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " UI
 Plugin 'scrooloose/nerdtree'
@@ -62,6 +63,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
+Plugin 'wavded/vim-stylus'
 
 " Colors
 Plugin 'joshdick/onedark.vim'
