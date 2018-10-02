@@ -59,6 +59,7 @@ alias mtrcp='meteor create --package'
 alias rails='bin/rails'
 alias rs='bin/rails s'
 alias rc='bin/rails c'
+alias rmg='bin/rails db:migrate RAILS_ENV=development'
 
 # Misc
 alias god='sh $DOTFILES_DIR/util/go_dark.sh'     # Sets dark theme on OSX, Atom and terminal

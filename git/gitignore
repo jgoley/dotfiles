@@ -28,3 +28,5 @@ env.local
 settings-local.json
 settings-dev.json
 settings-prod.json
+
+/**/*.mp4
