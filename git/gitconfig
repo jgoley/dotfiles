@@ -1,17 +1,18 @@
 [core]
         excludesfile = ~/.gitignore
-        editor       = vim
-        pager = diff-so-fancy | less --tabs=4 -RFX
+        editor       = vi
+        pager        = diff-so-fancy | less --tabs=4 -RFX
         ignorecase   = false
 [hub]
         protocol = https
 [user]
-        name  = jgoley
+  name = Jonathan Goley
         email = jgoley@gmail.com
 [credential]
-        helper = osxkeychain
+  helper = osxkeychain
 [alias]
         co = checkout
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [color]
         diff   = auto
         status = auto

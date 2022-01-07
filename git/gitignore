@@ -1,6 +1,6 @@
 # OS generated files #
 ######################
-.DS_Store
+**/.DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
@@ -21,6 +21,14 @@ npm-debug.log*
 
 # Rails stuff
 env.local
+vendor/ruby/
+
+# Sass
+.sass-cache/
+
+# Docker
+######################
+docker-compose.override.yml
 
 # ETC
 ######################
@@ -28,5 +36,15 @@ env.local
 settings-local.json
 settings-dev.json
 settings-prod.json
-
+Homestead.yaml
+api-test*
+app/config/parameters.example.yml
 /**/*.mp4
+test.pdf
+.jsbeautifyrc
+
+/**/app/tmp
+
+# Docker/Webpacker performance
+/**/app/assets_webpacker/packs/
+/**/app/views/layouts/_head.haml

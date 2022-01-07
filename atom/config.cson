@@ -17,6 +17,11 @@
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
   core:
+    closeDeletedFileTabs: true
+    customFileTypes:
+      "source.js": [
+        "js.jsx"
+      ]
     disabledPackages: [
       "linter-stylint"
       "linter-coffeelint"
@@ -30,6 +35,10 @@
       "linter"
       "linter-sass-lint"
       "linter-ui-default"
+      "about"
+      "language-typescript"
+      "language-pug"
+      "atom-ide-ui"
       "pigments"
     ]
     ignoredNames: [
@@ -53,22 +62,28 @@
   date: {}
   editor:
     fontFamily: "Fira Code, Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 15
     invisibles:
       eol: "↴"
       space: "•"
     scrollPastEnd: true
     showIndentGuide: true
-    showInvisibles: true
     softWrap: true
     tabType: "soft"
   "exception-reporting":
     userId: "54637407-dc39-5669-13b4-c71ec84fe2b9"
+  "fuzzy-finder":
+    scoringSystem: "fast"
+    useRipGrep: true
   "genesis-ui":
     distractionFree: {}
     treeView: {}
   "git-diff": {}
   "highlight-line":
+    enableBackgroundColor: false
+    enableSelectionBorder: true
     hideHighlightOnSelect: true
+  "language-babel": {}
   linter: {}
   "linter-ui-default":
     panelHeight: 66
@@ -94,7 +109,6 @@
     fontSize: 12
   "one-light-ui":
     fontSize: 12
-    layoutMode: "Compact"
   "package-generator":
     packageSyntax: "coffeescript"
   "package-sync":

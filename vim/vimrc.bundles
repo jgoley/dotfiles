@@ -30,7 +30,7 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'ycm-core/YouCompleteMe'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-rooter'
@@ -78,4 +78,3 @@ Plugin 'tpope/vim-sensible' " needs to be last
 
 call vundle#end()             " required by vundle!
 filetype plugin indent on     " required by vundle!
-

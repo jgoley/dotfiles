@@ -19,14 +19,11 @@
 	[
 		"gray_antialias"
 	],
-	"font_size": 11.0,
+	"font_size": 12.0,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Package Syncing",
 		"Six",
-		"Vintage",
-		"Vintageous"
 	],
 	"indent_guide_options":
 	[

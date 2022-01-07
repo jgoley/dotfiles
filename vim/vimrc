@@ -1,6 +1,5 @@
 " JGo!
 
-set nocompatible
 set encoding=utf-8
 set guifont=Hack\ Nerd\ Font:h11
 
@@ -87,4 +86,3 @@ hi NonText guifg=bg
 if filereadable(expand("~/.vimrc.remaps"))
   source ~/.vimrc.remaps
 endif
-

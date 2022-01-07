@@ -19,7 +19,7 @@ plugins=(
   git-extras
   meteor
   npm
-  osx
+  macos
   wd
   web-search
 )
@@ -35,8 +35,14 @@ export SSH_KEYS="~/.ssh/"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 
- #ALIASES
+#ALIASES
 . ~/code/dotfiles/aliases/aliases.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+ssh-add -A
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+
