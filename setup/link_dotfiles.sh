@@ -1,6 +1,6 @@
-. variables.sh
+. $SETUP_DIR/variables.sh
 
-DOTFILES="git phoenix zsh atom"
+DOTFILES="git phoenix zsh"
 
 link_files () {
   cd $DOTFILES_DIR

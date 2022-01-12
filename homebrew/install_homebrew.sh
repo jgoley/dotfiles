@@ -1,4 +1,4 @@
-. ../setup/variables.sh
+. $SETUP_DIR/variables.sh
 
 echo $BOLD'Installing Homebrew'$NORM
 which -s brew

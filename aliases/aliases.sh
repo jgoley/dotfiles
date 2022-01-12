@@ -1,4 +1,4 @@
-. ~/code/dotfiles/setup/variables.sh
+. $SETUP_DIR/variables.sh
 
 # Bash
 alias rf='rm -rf'

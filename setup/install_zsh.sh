@@ -1,4 +1,4 @@
-. variables.sh
+. $SETUP_DIR/variables.sh
 
 if  [ -f /bin/zsh -o -f /usr/bin/zsh ]
 then

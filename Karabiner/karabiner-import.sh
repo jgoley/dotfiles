@@ -1,4 +1,4 @@
-. ../setup/variables.sh
+. $SETUP_DIR/variables.sh
 
 KARABINER_CONFIG_FILE='karabiner.json'
 KARABINER_DIR=~/.config/karabiner/

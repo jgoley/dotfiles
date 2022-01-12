@@ -1,4 +1,4 @@
-. ../setup/variables.sh
+. $SETUP_DIR/variables.sh
 
 echo $BOLD'Setting OSX defaults...'$NORM
 . set-defaults.sh
