@@ -1,4 +1,4 @@
-. $SETUP_DIR/variables.sh
+. $HOME/code/dotfiles/setup/variables.sh
 
 # Bash
 alias rf='rm -rf'
@@ -45,6 +45,7 @@ alias gcan='git commit -v -a --no-edit --amend'
 alias gcanp='git commit -v -a --no-edit --amend && gpf'
 alias gd='git diff --color'
 alias gbc= 'git branch --show-current | pbcopy'
+alias go='git open'
 gri () {
   git rebase -i HEAD~$1
 }

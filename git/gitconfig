@@ -6,7 +6,7 @@
 [hub]
         protocol = https
 [user]
-  name = Jonathan Goley
+        name = Jonathan Golightly
         email = jgoley@gmail.com
 [credential]
   helper = osxkeychain

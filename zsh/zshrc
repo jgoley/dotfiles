@@ -30,10 +30,9 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export LANG=en_US.UTF-8
-export EDITOR='atom'
+export EDITOR='vi'
 export SSH_KEYS="~/.ssh/"
 export ANDROID_HOME=$HOME/Library/Android/sdk
-
 
 #ALIASES
 . ~/code/dotfiles/aliases/aliases.sh
@@ -41,8 +40,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-ssh-add -A
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile
+eval $(/opt/homebrew/bin/brew shellenv)
 
+ssh-add
