@@ -34,3 +34,5 @@
         browser = google-chrome
 [pull]
         rebase = true
+[init]
+	defaultBranch = main

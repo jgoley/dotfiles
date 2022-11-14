@@ -11,6 +11,7 @@ alias oa='open .'
 
 # Code Project
 alias DE='~/code/delaware-ephtn/'
+alias DEF='~/code/delaware-ephtn-frontend/'
 alias ICE='~/code/icer-app/'
 alias OP='~/code/hmis-warehouse/'
 alias WRI='~/code/wri/'
@@ -34,6 +35,7 @@ alias gbdp='git checkout production && git branch --merged | grep -v production 
 alias gcom='git checkout master'
 alias gcop='git checkout production'
 alias gcos='git checkout staging'
+alias gcod='git checkout demo'
 alias gcopp='gcop && ggpull'
 alias gcomp='gcom && ggpull'
 alias gcosp='gcos && ggpull'
@@ -46,6 +48,8 @@ alias gcanp='git commit -v -a --no-edit --amend && gpf'
 alias gd='git diff --color'
 alias gbc= 'git branch --show-current | pbcopy'
 alias go='git open'
+alias gawp='gaa && git reset head app/assets_webpacker/packs/ app/views/layouts/_head.haml config/webpack/custom.js package.json yarn.lock'
+alias gccb='gb --show-current | pbcopy'
 gri () {
   git rebase -i HEAD~$1
 }
@@ -164,3 +168,6 @@ alias dcu='docker compose up --rm'
 alias dcd='docker compose down'
 alias dcs='docker compose run shell'
 alias dcr='docker-compose run runner'
+
+# Rails
+alias rmg='bin/rails db:migrate RAILS_ENV=development'
