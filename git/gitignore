@@ -49,3 +49,6 @@ test.pdf
 # Docker/Webpacker performance
 /**/app/assets_webpacker/packs/
 /**/app/views/layouts/_head.haml
+
+# Linters
+.prettier*

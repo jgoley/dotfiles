@@ -1,16 +1,27 @@
 # AVIT ZSH Theme with custom prompt
 
+local _old_prompt="%{$reset_color%}% %{$fg[blue]%}% ⦿%{$reset_color%}% %{$fg[red]%}% ☉%{$reset_color%}% %{$fg[blue]%}% ⦿⤐%{$reset_color%}%  "
+local _new_prompt="%{$fg[green]%}%  %{$reset_color%}%"
+
+if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
+PROMPT='${_new_prompt} ${_current_dir} $(git_prompt_info) $(_git_time_since_commit) ${_return_status}'
+else
 PROMPT='
 %{$fg[red]%}% ${_current_dir} $(git_prompt_info) $(_ruby_version)
-%{$reset_color%}% %{$fg[blue]%}% ⦿%{$reset_color%}% %{$fg[red]%}% ☉%{$reset_color%}% %{$fg[blue]%}% ⦿⤐%{$reset_color%}%  '
-
-PROMPT2='%{$fg[grey]%}◀%{$reset_color%} '
-
+${_new_prompt} '
 RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
+fi
 
-local _current_dir="%{$fg[gray]%}%3~%{$reset_color%} "
+local _current_dir="%{$fg[brblack]%}%3~%{$reset_color%}"
 local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
-local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+local _hist_no="%{$fg[brblack]%}%h%{$reset_color%}"
+local _pipe="%{$fg[brblack]%} | %{$reset_color%}"
+
+function git_prompt() {
+  if [[ git_prompt_info != " " ]]; then
+    echo " ${_pipe} ${git_prompt_info}"
+  fi
+}
 
 function _user_host() {
   if [[ -n $SSH_CONNECTION ]]; then
@@ -31,7 +42,7 @@ function _vi_status() {
 
 function _ruby_version() {
   if {echo $fpath | grep -q "plugins/rvm"}; then
-    echo "%{$fg[grey]%}$(rvm_prompt_info)%{$reset_color%}"
+    echo "%{$fg[brblack]%}$(rvm_prompt_info)%{$reset_color%}"
   fi
 }
 
