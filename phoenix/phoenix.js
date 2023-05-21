@@ -7,6 +7,8 @@ hyper = [
   'shift'
 ]
 
+semiHyper = [ "cmd", "alt" ]
+
 appMash = [
   'cmd'
   'alt'
@@ -30,24 +32,34 @@ changeGridWidth = (amount) ->
   _.each Window.all(visible: true), (win) ->
     win.snapToGrid()
 
+expandRight = () ->
+  win = Window.focused()
+  f = win.getGrid()
+  if f.w == GRID_WIDTH - f.x and f.x isnt 0
+    ++f.w
+    --f.x
+  else
+    f.w = Math.min(f.w + 1, GRID_WIDTH - f.x)
+  win.setGrid f, win.screen()
+
 Window::getGrid = ->
   winFrame = @frame()
-  screenRect = @screen().visibleFrameInRectangle()
-  thirdScreenWidth = screenRect.width / GRID_WIDTH
-  halfScreenHeight = screenRect.height / 2
+  screen = @screen().flippedVisibleFrame()
+  thirdScreenWidth = screen.width / GRID_WIDTH
+  halfScreenHeight = screen.height / 2
 
-  x: Math.round((winFrame.x - screenRect.x) / thirdScreenWidth)
-  y: Math.round((winFrame.y - screenRect.y) / halfScreenHeight)
+  x: Math.round((winFrame.x - screen.x) / thirdScreenWidth)
+  y: Math.round((winFrame.y - screen.y) / halfScreenHeight)
   w: Math.max(1, Math.round(winFrame.width / thirdScreenWidth))
   h: Math.max(1, Math.round(winFrame.height / halfScreenHeight))
 
 Window::setGrid = (grid, screen) ->
-  screenRect = screen.visibleFrameInRectangle()
-  thirdScreenWidth = screenRect.width / GRID_WIDTH
-  halfScreenHeight = screenRect.height / 2
+  screen = screen.flippedVisibleFrame()
+  thirdScreenWidth = screen.width / GRID_WIDTH
+  halfScreenHeight = screen.height / 2
   newFrame =
-    x: grid.x * thirdScreenWidth + screenRect.x
-    y: grid.y * halfScreenHeight + screenRect.y
+    x: grid.x * thirdScreenWidth + screen.x
+    y: grid.y * halfScreenHeight + screen.y
     width: grid.w * thirdScreenWidth
     height: grid.h * halfScreenHeight
   newFrame.x += MARGIN_X
@@ -77,6 +89,9 @@ keys.push new Key '=', hyper, ->
 keys.push new Key '-', hyper, ->
   changeGridWidth(-1)
 
+keys.push new Key 'O', hyper, ->
+  expandRight()
+
 # Focus closet window to left
 keys.push new Key 'left', hyper, ->
   Window.focused().focusClosestNeighbour 'west'
@@ -102,32 +117,30 @@ keys.push new Key 'P', hyper, ->
 keys.push new Key 'M', hyper, ->
   win = Window.focused().maximize()
 
-# Move window to left
+# Expand window to left.
+# If window is against the left side of screen and not full screen,
+# window will expand to right
 keys.push new Key 'H', hyper, ->
   win = Window.focused()
+  winFrame = win.frame()
   f = win.getGrid()
   f.x = Math.max(f.x - 1, 0)
   win.setGrid f, win.screen()
-
-# Move window to right
-keys.push new Key 'L', hyper, ->
-  win = Window.focused()
-  f = win.getGrid()
-  f.x = Math.min(f.x + 1, GRID_WIDTH - f.w)
-  win.setGrid f, win.screen()
+  if winFrame.x <= MARGIN_X
+    expandRight()
 
 # Expand window to right.
 # If window is against the right side of screen and not full screen,
 # window will expand to left
-keys.push new Key 'O', hyper, ->
+keys.push new Key 'L', hyper, ->
   win = Window.focused()
   f = win.getGrid()
-  if f.w == GRID_WIDTH - f.x and f.x isnt 0
-    ++f.w
-    --f.x
-  else
-    f.w = Math.min(f.w + 1, GRID_WIDTH - f.x)
+  frame = win.frame()
+  screenFrame = Screen.main().flippedVisibleFrame()
+  f.x = Math.min(f.x + 1, GRID_WIDTH - f.w)
   win.setGrid f, win.screen()
+  if frame.x + frame.width > screenFrame.width - MARGIN_X - MARGIN_Y
+    expandRight()
 
 # Compress window to left
 keys.push new Key 'I', hyper, ->
@@ -159,6 +172,60 @@ keys.push new Key 'U', hyper, ->
   f.y = 0
   f.h = 2
   win.setGrid f, win.screen()
+
+# Center active window in screen
+keys.push new Key 'return', hyper, ->
+  win = Window.focused()
+  winFrame = win.frame()
+  screenFrame = win.screen().flippedVisibleFrame()
+  win.setFrame({
+    x: (screenFrame.width - winFrame.width) / 2
+    y: (screenFrame.height - winFrame.height) / 2
+    width: winFrame.width
+    height: winFrame.height
+  })
+
+
+#########################
+# Spaces
+#########################
+
+moveScreenToSpace = ({direction='east', windowToMove="focused"}) ->
+  windows = []
+  activeSpace = Space.active();
+  activeWindow = Window.focused()
+
+  windows = if windowToMove == "focused" then [activeWindow] else activeSpace.windows()
+  newSpace = if direction == "east" then activeSpace.next() else activeSpace.previous()
+  if newSpace
+    newSpace.moveWindows(windows);
+    activeWindow.focus();
+
+# Move focused window to the *next* space and focus to the space
+keys.push new Key 'l', semiHyper, ->
+  moveScreenToSpace({direction: "east"})
+
+# Move focused window to the *previous* space and focus to the space
+keys.push new Key 'h', semiHyper, ->
+  moveScreenToSpace({direction: "west"})
+
+# Move all windows to the *next* space and focus to the space
+keys.push new Key 'u', semiHyper, ->
+  moveScreenToSpace({direction: "east", windowToMove: "all"})
+
+# Move all windows to the *previous* space and focus to the space
+keys.push new Key 'p', semiHyper, ->
+  moveScreenToSpace({direction: "west", windowToMove: "all"})
+
+#########################
+# Mouse
+#########################
+
+# Move cursor to the center of the active screen
+# keys.push new Key 'space', hyper, ->
+#   { width, height } = Screen.main().flippedVisibleFrame()
+#   Mouse.move({ x: width / 2, y: height / 2  });
+
 
 ###
  App related Key Bindings
