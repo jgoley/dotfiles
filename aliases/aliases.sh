@@ -13,8 +13,9 @@ alias oa='open .'
 alias DE='~/code/delaware-ephtn/'
 alias DEF='~/code/delaware-ephtn-frontend/'
 alias ICE='~/code/icer-app/'
-alias OP='~/code/hmis-warehouse/'
-alias WRI='~/code/wri/'
+alias SBS='~/code/starbucks-vrs-suppliers'
+alias SBV='~/code/starbucks-vrs-verification'
+alias GS='~/code/scs-greenerstores'
 
 # Editors
 alias vi='mvim'
@@ -30,9 +31,9 @@ alias vcon='git diff --name-only | uniq | xargs vi'
 alias gaa='git add .'
 alias gb='git branch --sort=-committerdate'
 alias gbd='git branch -D '
-alias gbdm='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
+alias gbdm='git checkout main && git branch --merged | grep -v main | xargs git branch -d'
 alias gbdp='git checkout production && git branch --merged | grep -v production | xargs git branch -d'
-alias gcom='git checkout master'
+alias gcom='git checkout main'
 alias gcop='git checkout production'
 alias gcos='git checkout staging'
 alias gcod='git checkout demo'
@@ -62,10 +63,16 @@ gcbp () {
   ggpull && gcb $1
 }
 
+glob () {
+  local base_branch=${1:-main}
+  git log --oneline --decorate "${base_branch}..HEAD"
+}
+
 # Npm and Bower
 alias npms='npm install --save '
 alias bowi='bower install'
 alias bowis='bower install --save'
+alias nrd='npm run dev'
 
 # Meteor
 alias mtr='meteor'
@@ -82,7 +89,7 @@ alias rn='rails new'
 alias rs='bin/rails s'
 alias rc='bin/rails c'
 alias rmg='bin/rails db:migrate RAILS_ENV=development'
-alias lint='bundle exec standardrb --fix'
+alias lint='npm run lint'
 
 # Webpacker (Rails
 alias wpw='./bin/webpack --watch --colors --progress'
@@ -159,15 +166,24 @@ startp12 () {
 alias bslist='brew services list'
 
 # Docker
-alias dcr='docker-compose run --rm'
-alias dup='docker-compose up'
-alias ddn='docker-compose down'
+alias dcr='docker compose run --rm'
+alias dup='bin/docker_start'
+alias ddn='bin/docker_down'
+alias dcssh='docker_ssh_runner'
+# alias dup='docker compose up'
+# alias ddn='docker compose down'
 alias drunmg='drun bin/rails db:migrate RAILS_ENV=development'
 
 alias dcu='docker compose up --rm'
-alias dcd='docker compose down'
+alias dcd='bin/docker_down'
 alias dcs='docker compose run shell'
-alias dcr='docker-compose run runner'
+alias dcr='docker compose run runner'
 
 # Rails
 alias rmg='bin/rails db:migrate RAILS_ENV=development'
+
+# SBUX
+alias sb0="ssh -A jgoley@sbux0.cafepractices.info"
+alias sb1="ssh -A jgoley@sbux1.cafepractices.info"
+alias sb2="ssh -A jgoley@sbux2.cafepractices.info"
+alias sb3="ssh -A ubuntu@sbux3.cafepractices.info"
