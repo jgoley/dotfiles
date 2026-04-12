@@ -42,3 +42,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile
 # eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+docker context use default &> /dev/null
+# export DOCKER_HOST="unix:///Users/jgo/.colima/default/docker.sock"

@@ -179,6 +179,9 @@ alias dcd='bin/docker_down'
 alias dcs='docker compose run shell'
 alias dcr='docker compose run runner'
 
+# Colima
+alias cs='colima start --cpu 4 --memory 8 --vm-type vz --vz-rosetta'
+
 # Rails
 alias rmg='bin/rails db:migrate RAILS_ENV=development'
 
